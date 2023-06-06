@@ -1,6 +1,5 @@
 import './App.css';
 import { Route } from 'wouter';
-import Titulo from './componentes/Titulo/Titulo';
 import Menu from './componentes/Menu/Menu';
 import Home from './paginas/Home/Home';
 import Viviendas from './paginas/Viviendas/Viviendas';
@@ -15,13 +14,10 @@ function App() {
   return (
     <div>
       <div>
-        <Titulo></Titulo>
-        <Menu></Menu>
         <Route component={Home} path="/"></Route>
         <Route component={Viviendas} path="/viviendas"></Route>
         <Route component={ViviendaDetallada} path="/vivienda/:idVivienda"></Route>
-        <Route component={Login} path="/dashboard"></Route>
-        <Footer></Footer>
+        <Route component={Login} path="/login"></Route>
         </div>
     </div>
   );

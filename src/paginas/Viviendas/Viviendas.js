@@ -11,6 +11,10 @@ import StatusForm from '../../componentes/Status/StatusForm';
 import ListaViviendas from '../../componentes/ListaViviendas/ListaViviendas';
 import CambioPagina from '../../componentes/CambioPagina/CambioPagina';
 import useAllViviendas from '../../hooks/useAllViviendas';
+import Menu from '../../componentes/Menu/Menu';
+import Footer from '../../componentes/Footer/Footer';
+import { ViviendasFiltradasContext } from '../../contextos/ViviendasFiltradasContext';
+import { useContext } from 'react';
 
 function Viviendas() {
 
@@ -22,6 +26,8 @@ function Viviendas() {
     //Dependiendo de la página, se devolverá gracias al hook useAllViviendas una lista de viviendas en concreto
     const [page, setPage] = useState(1);
     const { buscando, listaViviendas } = useAllViviendas(page);
+    // Obtenemos filtrado y viviendasFiltradas del contexto
+    const { filtrado, viviendasFiltradas } = useContext(ViviendasFiltradasContext);
 
     //Se recibe el valor del nieto o del hijo mediante el contexto en las siguientes funciones, en forma de event, y luego se manda al estado en forma de value
     function manejarOrdenacion(event) {
@@ -62,8 +68,8 @@ function Viviendas() {
 
     return (
         <div>
-            <div className="main2">
-            <div className="filtros">
+            <Menu></Menu>
+                <div>
                     <ul>
                         <li>
                             <h3>Filtro 1</h3>
@@ -105,15 +111,17 @@ function Viviendas() {
                     </ul>
                 </div>
                 {buscando ? <AjaxLoader></AjaxLoader>
-                          : <ListaViviendas actualizarOrdenacion={ordenacion}
-                                             actualizarTipoVivienda={tipovivienda}
-                                             actualizarGenero={genero}
-                                             actualizarStatus={status}
-                                             listaViviendas={listaViviendas}>
-                            </ListaViviendas>
+                    : <ListaViviendas actualizarOrdenacion={ordenacion}
+                        actualizarTipoVivienda={tipovivienda}
+                        actualizarGenero={genero}
+                        actualizarStatus={status}
+                        listaViviendas={listaViviendas}
+                        filtrado={filtrado}
+                        viviendasFiltradas={viviendasFiltradas}>
+                    </ListaViviendas>
                 }
-            </div>
-            <CambioPagina manejarPage={manejarPage} page={page}></CambioPagina>
+                <CambioPagina manejarPage={manejarPage} page={page}></CambioPagina>
+                <Footer></Footer>
         </div>
     );
 }

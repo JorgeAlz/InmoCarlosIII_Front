@@ -46,7 +46,7 @@ const ListaViviendas = (props) => {
 
   return (
     <div>
-      <ul className="mx-28">
+      <ul className="mx-28 flex gap-24 mt-5">
         {props.listaViviendas
           // .filter(filtrarTipoVivienda)
           // .filter(filtrarGenero)
