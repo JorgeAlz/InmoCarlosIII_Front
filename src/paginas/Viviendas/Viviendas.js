@@ -11,12 +11,11 @@ import StatusForm from '../../componentes/Status/StatusForm';
 import ListaViviendas from '../../componentes/ListaViviendas/ListaViviendas';
 import CambioPagina from '../../componentes/CambioPagina/CambioPagina';
 import useAllViviendas from '../../hooks/useAllViviendas';
+import useAllViviendasByMunicipio from '../../hooks/useAllViviendasByMunicipio';
 import Menu from '../../componentes/Menu/Menu';
 import Footer from '../../componentes/Footer/Footer';
-import { ViviendasFiltradasContext } from '../../contextos/ViviendasFiltradasContext';
-import { useContext } from 'react';
 
-function Viviendas() {
+function Viviendas(props) {
 
     //El vivienda recibido en este componente es el vivienda de una id específica. Esta id es recogida del la url y pasada al hook useUnVivienda, que a su vez devuelve el vivienda de dicha id.
     const [ordenacion, setOrdenacion] = useState("A...Z");
@@ -26,8 +25,7 @@ function Viviendas() {
     //Dependiendo de la página, se devolverá gracias al hook useAllViviendas una lista de viviendas en concreto
     const [page, setPage] = useState(1);
     const { buscando, listaViviendas } = useAllViviendas(page);
-    // Obtenemos filtrado y viviendasFiltradas del contexto
-    const { filtrado, viviendasFiltradas } = useContext(ViviendasFiltradasContext);
+    const { listaViviendasByMunicipio } = useAllViviendasByMunicipio(props.municipio);
 
     //Se recibe el valor del nieto o del hijo mediante el contexto en las siguientes funciones, en forma de event, y luego se manda al estado en forma de value
     function manejarOrdenacion(event) {
@@ -116,8 +114,8 @@ function Viviendas() {
                         actualizarGenero={genero}
                         actualizarStatus={status}
                         listaViviendas={listaViviendas}
-                        filtrado={filtrado}
-                        viviendasFiltradas={viviendasFiltradas}>
+                        municipio={props.municipio}
+                        listaViviendasByMunicipio={listaViviendasByMunicipio}>
                     </ListaViviendas>
                 }
                 <CambioPagina manejarPage={manejarPage} page={page}></CambioPagina>

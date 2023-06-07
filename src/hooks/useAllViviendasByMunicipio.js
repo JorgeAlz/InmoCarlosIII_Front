@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { getUnaVivienda } from "../servicios/viviendas/getUnaVivienda";
+import { getAllViviendasByMunicipio } from "../servicios/viviendas/getAllViviendasByMunicipio";
 
-const useUnaVivienda = (id) =>  {
+const useUnaVivienda = (municipio) =>  {
     
     const [vivienda, setVivienda] = useState([]);
     const [buscando, setBuscando] = useState(true);
 
-    function obtenerUnaVivienda() {
+    function obtenerAllViviendasByMunicipio() {
         //Marcamos que estamos buscando los datos
         setBuscando(true);
         // Usamos el servicio de obtención de posts que hemos creado
-        getUnaVivienda(id).then(vivienda => {
+        getAllViviendasByMunicipio(municipio).then(vivienda => {
             //Cargamos los post en el estado del componente
             setVivienda(vivienda);
             //Indicamos que hemos terminado de cargar los datos
@@ -20,7 +20,7 @@ const useUnaVivienda = (id) =>  {
 
     // Llamamos a la función de extracción de datos con un useEffect
     // para que solo se ejecute una vez
-    useEffect(obtenerUnaVivienda, [id]);
+    useEffect(obtenerAllViviendasByMunicipio, [municipio]);
     //La vivienda que devolvemos es el cual cuya id hemos pasado a este hook
     return {buscando, vivienda}
 }

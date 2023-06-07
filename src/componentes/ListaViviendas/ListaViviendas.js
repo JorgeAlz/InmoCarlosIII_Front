@@ -44,18 +44,34 @@ const ListaViviendas = (props) => {
     return <Vivienda key={vivienda.id} vivienda={vivienda}></Vivienda>;
   }
 
-  return (
-    <div>
-      <ul className="mx-28 flex gap-24 mt-5">
-        {props.listaViviendas
-          // .filter(filtrarTipoVivienda)
-          // .filter(filtrarGenero)
-          // .filter(filtrarStatus)
-          // .sort(ordenarViviendas)
-          .map(muestraViviendas)}
-      </ul>
-    </div>
-  );
+  if (props.municipio !== "") {
+    return (
+      <div>
+        <ul className="mx-28 flex gap-24 mt-5">
+          {props.listaViviendasByMunicipio
+            // .filter(filtrarTipoVivienda)
+            // .filter(filtrarGenero)
+            // .filter(filtrarStatus)
+            // .sort(ordenarViviendas)
+            .map(muestraViviendas)}
+        </ul>
+      </div>
+    );
+  } else {
+
+  }
+    return (
+      <div>
+        <ul className="mx-28 flex gap-24 mt-5">
+          {props.listaViviendas
+            // .filter(filtrarTipoVivienda)
+            // .filter(filtrarGenero)
+            // .filter(filtrarStatus)
+            // .sort(ordenarViviendas)
+            .map(muestraViviendas)}
+        </ul>
+      </div>
+    );
 }
 
 export default ListaViviendas;
