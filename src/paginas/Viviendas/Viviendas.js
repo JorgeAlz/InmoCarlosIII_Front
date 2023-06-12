@@ -15,7 +15,7 @@ import useAllViviendasByMunicipio from '../../hooks/useAllViviendasByMunicipio';
 import Menu from '../../componentes/Menu/Menu';
 import Footer from '../../componentes/Footer/Footer';
 
-function Viviendas(props) {
+function Viviendas() {
 
     //El vivienda recibido en este componente es el vivienda de una id específica. Esta id es recogida del la url y pasada al hook useUnVivienda, que a su vez devuelve el vivienda de dicha id.
     const [ordenacion, setOrdenacion] = useState("A...Z");
@@ -25,7 +25,9 @@ function Viviendas(props) {
     //Dependiendo de la página, se devolverá gracias al hook useAllViviendas una lista de viviendas en concreto
     const [page, setPage] = useState(1);
     const { buscando, listaViviendas } = useAllViviendas(page);
-    const { listaViviendasByMunicipio } = useAllViviendasByMunicipio(props.municipio);
+    const [municipio] = useState(localStorage.getItem("getMunicipio"));
+    localStorage.removeItem("getMunicipio");
+    const { listaViviendasByMunicipio } = useAllViviendasByMunicipio(municipio);
 
     //Se recibe el valor del nieto o del hijo mediante el contexto en las siguientes funciones, en forma de event, y luego se manda al estado en forma de value
     function manejarOrdenacion(event) {
@@ -114,7 +116,7 @@ function Viviendas(props) {
                         actualizarGenero={genero}
                         actualizarStatus={status}
                         listaViviendas={listaViviendas}
-                        municipio={props.municipio}
+                        municipio={municipio}
                         listaViviendasByMunicipio={listaViviendasByMunicipio}>
                     </ListaViviendas>
                 }

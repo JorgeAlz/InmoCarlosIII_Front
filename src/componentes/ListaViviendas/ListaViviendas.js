@@ -44,7 +44,7 @@ const ListaViviendas = (props) => {
     return <Vivienda key={vivienda.id} vivienda={vivienda}></Vivienda>;
   }
 
-  if (props.municipio !== "") {
+  if (props.municipio !== null) {
     return (
       <div>
         <ul className="mx-28 flex gap-24 mt-5">
@@ -58,8 +58,6 @@ const ListaViviendas = (props) => {
       </div>
     );
   } else {
-
-  }
     return (
       <div>
         <ul className="mx-28 flex gap-24 mt-5">
@@ -72,6 +70,7 @@ const ListaViviendas = (props) => {
         </ul>
       </div>
     );
+  }
 }
 
 export default ListaViviendas;
