@@ -1,4 +1,3 @@
-import './App.css';
 import { Route } from 'wouter';
 import Home from './paginas/Home/Home';
 import Viviendas from './paginas/Viviendas/Viviendas';
@@ -16,8 +15,7 @@ function App() {
         <Route component={Viviendas} path="/viviendas"></Route>
         <Route component={ViviendaDetallada} path="/vivienda/:idVivienda"></Route>
         <Route component={Login} path="/login"></Route>
-        
-        </div>
+      </div>
     </div>
   );
 }

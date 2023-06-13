@@ -1,5 +1,3 @@
-import './ScrollButton.css';
-
 const ScrollButon = () => {
 
     //Manejamos la aparición y desaparición del botón de scroll cada vez que hagamos scroll en la página

@@ -1,13 +1,11 @@
-import './ViviendaCompleta.css'
-
 const ViviendaCompleta = (props) => {
 
     let altImagen = "Vivienda " + props.vivienda.tipo;
     let imagenes = props.vivienda.imagenes.split(",");
 
     return (
-        <div>
-            <figure className="bg-gray-300 w-6/12 m-auto my-20 rounded-xl">
+        <div className="flex justify-center my-[100px]" >
+            <figure className="w-1/2 block rounded-xl bg-green-200 p-4 sm:p-6 lg:p-8">
                 <p>{props.vivienda.tipo}</p>
                 <img className="w-80" src={imagenes[0]} alt={altImagen}></img>
                 <figcaption>

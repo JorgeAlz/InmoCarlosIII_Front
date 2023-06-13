@@ -27,7 +27,7 @@ const ListaViviendas = (props) => {
   //devolviendo para algunos vivienda true, y para otros false (solo se mostrarán los que devuelvan true)
   function filtrarTipoVivienda(vivienda) {
     return props.actualizarTipoVivienda === "Todos" ? true
-      : vivienda.species === props.actualizarTipoVivienda;
+      : vivienda.tipo === props.actualizarTipoVivienda;
   }
 
   function filtrarGenero(vivienda) {
@@ -40,28 +40,33 @@ const ListaViviendas = (props) => {
       : vivienda.status === props.actualizarStatus;
   }
 
+  function filtrarPrecio(vivienda) {
+    if (props.precioMin === "Indiferente" && props.precioMax === "Indiferente") {
+      return true;
+    } else if (props.precioMin === "Indiferente" && props.precioMax !== "Indiferente") {
+      return vivienda.precio <= props.precioMax;
+    } else if (props.precioMin !== "Indiferente" && props.precioMax === "Indiferente") {
+      return vivienda.precio >= props.precioMin;
+    } else if (props.precioMin !== "Indiferente" && props.precioMax !== "Indiferente") {
+      return vivienda.precio >= props.precioMin && vivienda.precio <= props.precioMax;
+    }
+  }
+
+  function filtrarMunicipio(vivienda) {
+    return props.municipio == null ? true
+      : vivienda.municipio.toLowerCase() === props.municipio.toLowerCase();
+  }
+
   function muestraViviendas(vivienda) {
     return <Vivienda key={vivienda.id} vivienda={vivienda}></Vivienda>;
   }
 
-  if (props.municipio !== null) {
     return (
       <div>
-        <ul className="mx-28 flex gap-24 mt-5">
-          {props.listaViviendasByMunicipio
-            // .filter(filtrarTipoVivienda)
-            // .filter(filtrarGenero)
-            // .filter(filtrarStatus)
-            // .sort(ordenarViviendas)
-            .map(muestraViviendas)}
-        </ul>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <ul className="mx-28 flex gap-24 mt-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-24 mt-5">
           {props.listaViviendas
+            .filter(filtrarMunicipio)
+            .filter(filtrarPrecio)
             // .filter(filtrarTipoVivienda)
             // .filter(filtrarGenero)
             // .filter(filtrarStatus)
@@ -70,7 +75,6 @@ const ListaViviendas = (props) => {
         </ul>
       </div>
     );
-  }
 }
 
 export default ListaViviendas;

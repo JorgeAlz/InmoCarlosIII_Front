@@ -1,4 +1,3 @@
-import '../../FiltroGenero.css';
 import { useContext } from "react";
 import TipoViviendaContext from "../../contextos/TipoViviendaContext";
 

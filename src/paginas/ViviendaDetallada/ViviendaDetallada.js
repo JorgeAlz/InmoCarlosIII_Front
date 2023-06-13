@@ -1,7 +1,8 @@
-import '../../App.css';
 import AjaxLoader from '../../componentes/Ajax-Loader/AjaxLoader';
 import useUnaVivienda from '../../hooks/useUnaVivienda';
 import ViviendaCompleta from '../../componentes/ViviendaCompleta/ViviendaCompleta';
+import Menu from '../../componentes/Menu/Menu';
+import Footer from '../../componentes/Footer/Footer';
 
 
 function ViviendaDetallada(props) {
@@ -11,11 +12,13 @@ function ViviendaDetallada(props) {
 
     return (
         <div>
+            <Menu></Menu>
             <div>
                 {buscando ? <AjaxLoader></AjaxLoader>
-                          : <ViviendaCompleta vivienda={vivienda}></ViviendaCompleta>
+                    : <ViviendaCompleta vivienda={vivienda}></ViviendaCompleta>
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 }
