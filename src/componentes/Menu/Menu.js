@@ -1,6 +1,10 @@
+import { Link } from "wouter";
 import logo from "../../img/logo.png";
 
 function Menu() {
+
+    const token1 = sessionStorage.getItem('token');
+    const username = localStorage.getItem('user');
 
     return (
         <header aria-label="Site Header" className="bg-gradient-to-br from-[#5F8577] to-[#84A98C] sticky top-0 z-50">
@@ -12,7 +16,7 @@ function Menu() {
                             <img
                                 className="h-8"
                                 src={logo}
-                                alt="Descripción de la imagen"
+                                alt="DescripciÃ³n de la imagen"
                             />
                         </a>
                     </div>
@@ -42,13 +46,23 @@ function Menu() {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
-                            <a className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow" href="/login">
-                                Iniciar sesión
-                            </a>
+                            
+                            {token1 ?
+                                    <Link to="/logout"><a href="/logout" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Logout </a></Link>
+                                    : 
+                                    <Link to="/login"><a href="/login" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Login </a></Link> 
+                            }
                             <div className="hidden sm:flex">
-                                <a className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600" href="/">
+                                {/* <a className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600" href="/">
                                     Crear cuenta
-                                </a>
+                                </a> */}
+
+                                {token1 ?
+                                        <Link to="/dashboard"><a href="/dashboard" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Bienvenid@, {username} </a></Link>
+                                        : 
+                                        <Link to="/register"><a href="/register" className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600">Crear cuenta </a></Link> 
+                                }   
+                                
                             </div>
                         </div>
                         <div className="block md:hidden">
