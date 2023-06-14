@@ -52,9 +52,21 @@ const ListaViviendas = (props) => {
     }
   }
 
-  function filtrarMunicipio(vivienda) {
-    return props.municipio == null ? true
-      : vivienda.municipio.toLowerCase() === props.municipio.toLowerCase();
+  function filtrarMunicipioProvincia(vivienda) {
+    if (!(props.municipioProvincia == "" || props.municipioProvincia == null)) {
+      return filtradoPorLetras(vivienda);
+    } else {
+      return true;
+    }
+  }
+
+  function filtradoPorLetras(vivienda) {
+    for (let i = 0; i < props.municipioProvincia.length; i++) {
+      if (vivienda.municipio.charAt(i).toLowerCase() !== props.municipioProvincia.charAt(i).toLowerCase() && vivienda.provincia.charAt(i).toLowerCase() !== props.municipioProvincia.charAt(i).toLowerCase()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   function muestraViviendas(vivienda) {
@@ -65,7 +77,7 @@ const ListaViviendas = (props) => {
       <div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-24 mt-5">
           {props.listaViviendas
-            .filter(filtrarMunicipio)
+            .filter(filtrarMunicipioProvincia)
             .filter(filtrarPrecio)
             // .filter(filtrarTipoVivienda)
             // .filter(filtrarGenero)

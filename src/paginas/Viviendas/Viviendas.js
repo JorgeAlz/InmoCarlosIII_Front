@@ -19,8 +19,8 @@ function Viviendas() {
     //Dependiendo de la página, se devolverá gracias al hook useAllViviendas una lista de viviendas en concreto
     const [page, setPage] = useState(1);
     const { buscando, listaViviendas } = useAllViviendas(page);
-    const [municipio] = useState(localStorage.getItem("getMunicipio"));
-    localStorage.removeItem("getMunicipio");
+    const [municipioProvincia, setMunicipioProvincia] = useState(localStorage.getItem("getMunicipioProvincia"));
+    localStorage.removeItem("getMunicipioProvincia");
 
     //Se recibe el valor del nieto o del hijo mediante el contexto en las siguientes funciones, en forma de event, y luego se manda al estado en forma de value
     function manejarOrdenacion(event) {
@@ -64,7 +64,9 @@ function Viviendas() {
             <Menu></Menu>
             <Filtros
                 setPrecioMin={setPrecioMin}
-                setPrecioMax={setPrecioMax}>
+                setPrecioMax={setPrecioMax}
+                municipioProvincia={municipioProvincia}
+                setMunicipioProvincia={setMunicipioProvincia}>
             </Filtros>
             {buscando ? <AjaxLoader></AjaxLoader>
                 : <ListaViviendas
@@ -74,7 +76,7 @@ function Viviendas() {
                     actualizarTipoVivienda={tipovivienda}
                     actualizarGenero={genero}
                     actualizarStatus={status}
-                    municipio={municipio}
+                    municipioProvincia={municipioProvincia}
                     listaViviendas={listaViviendas}>
                 </ListaViviendas>
             }

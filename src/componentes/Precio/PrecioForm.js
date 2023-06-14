@@ -3,6 +3,17 @@ import Precio from "./Precio";
 
 const PrecioForm = (props) => {
 
+    document.addEventListener('click', function(event) {
+        let filtroPrecios = document.getElementById("FiltroPrecios");
+        let targetElement = event.target;
+      
+        if (!filtroPrecios.contains(targetElement)) {
+          if (filtroPrecios.open) {
+            filtroPrecios.open = false;
+          }
+        }
+      });
+
     function restablecerPrecios() {
     }
 
@@ -11,8 +22,8 @@ const PrecioForm = (props) => {
     }
 
     return (
-        <div className="relative mt-2">
-                <details className="group [&_summary::-webkit-details-marker]:hidden">
+        <div className="relative mt-[10px]">
+                <details id="FiltroPrecios" className="group [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
                         <span className="text-sm font-medium"> Precio </span>
                         <span className="transition group-open:-rotate-180">
@@ -20,13 +31,13 @@ const PrecioForm = (props) => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
-                                stroke-width="1.5"
+                                strokeWidth="1.5"
                                 stroke="currentColor"
                                 className="h-4 w-4"
                             >
                                 <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                                 />
                             </svg>

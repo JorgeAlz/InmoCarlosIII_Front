@@ -18,7 +18,7 @@ const TarjetaVivienda = (props) => {
 
                         <div>
                             <dt className="sr-only">Dirección</dt>
-                            <dd className="font-medium mt-3">{props.vivienda.direccion}, {props.vivienda.provincia}, {props.vivienda.municipio}</dd>
+                            <dd className="font-medium mt-3">{props.vivienda.direccion}, {props.vivienda.provincia}, {props.vivienda.municipioProvincia}</dd>
                         </div>
                     </dl>
                 </div>
