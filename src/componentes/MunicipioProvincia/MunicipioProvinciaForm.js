@@ -5,7 +5,17 @@ const MunicipioProvinciaForm = (props) => {
     const inputRef = useRef(null);
     const svgRef = useRef(null);
 
-    console.log(svgRef);
+    function masTexto(event) {
+        svgRef.current.classList.remove("hidden");;
+        props.manejarCambio(event.target.value);
+        props.comprobarVacio(inputRef.current.value, svgRef.current);
+    }
+
+    function borrarContenido() {
+        inputRef.current.value = "";
+        svgRef.current.classList.add("hidden");
+        props.manejarCambio("");
+    }
 
     useEffect(() => {
         if (inputRef.current && props.rellenarInput) {
@@ -19,7 +29,7 @@ const MunicipioProvinciaForm = (props) => {
                 ref={inputRef}
                 id="busquedaMunicipio"
                 type="text"
-                onChange={props.manejarCambio}
+                onChange={masTexto}
                 placeholder="Buscar vivienda en provincia, municipio..."
                 className="mt-1 p-2 w-72 rounded-md border border-gray-200 shadow-sm focus:outline-none sm:text-sm"
             />
@@ -29,8 +39,8 @@ const MunicipioProvinciaForm = (props) => {
                 id="iconoX"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                onClick={() => props.comprobarVacio(inputRef.current.value, svgRef.current)}
-                className="absolute top-1/2 ml-[255px] mt-[2px] transform -translate-y-1/2 h-4 w-4 text-gray-500 cursor-pointer hidden hover:text-black"
+                onClick={borrarContenido}
+                className="absolute top-1/2 ml-[255px] mt-[2px] transform -translate-y-1/2 h-4 w-4 text-gray-500 cursor-pointer hover:text-black hidden"
             >
                 <path
                     fillRule="evenodd"

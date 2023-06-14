@@ -9,7 +9,6 @@ import Modelo3D from './componentes/Modelo3D/Modelo3D';
 
 function App() {
 
-  
   const token1 = sessionStorage.getItem('token');
 
   return (

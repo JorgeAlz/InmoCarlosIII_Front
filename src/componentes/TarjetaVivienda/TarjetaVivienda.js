@@ -13,12 +13,12 @@ const TarjetaVivienda = (props) => {
                     <dl>
                         <div>
                             <dt className="sr-only">Precio</dt>
-                            <dd className="font-medium text-3xl mt-4">{props.vivienda.precio}</dd>
+                            <dd className="font-medium text-3xl mt-4">{props.vivienda.precio}€</dd>
                         </div>
 
                         <div>
                             <dt className="sr-only">Dirección</dt>
-                            <dd className="font-medium mt-3">{props.vivienda.direccion}, {props.vivienda.provincia}, {props.vivienda.municipioProvincia}</dd>
+                            <dd className="font-medium mt-3">{props.vivienda.direccion}, {props.vivienda.provincia}, {props.vivienda.municipio}</dd>
                         </div>
                     </dl>
                 </div>

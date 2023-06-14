@@ -22,7 +22,7 @@ const PrecioForm = (props) => {
     }
 
     return (
-        <div className="relative mt-[10px]">
+        <div className="relative mt-[10px] mx-5">
                 <details id="FiltroPrecios" className="group [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
                         <span className="text-sm font-medium"> Precio </span>
@@ -44,14 +44,14 @@ const PrecioForm = (props) => {
                         </span>
                     </summary>
 
-                    <div className="z-50 group-open:absolute group-open:start-0 group-open:top-auto group-open:mt-2">
+                    <div className="z-50 group-open:absolute group-open:start-0 group-open:top-auto group-open:mt-4">
                         <div className="w-[450px] rounded border border-gray-200 bg-white">
                             <div className="border-b border-gray-200 p-4">
                                 <div className="flex justify-center gap-4">
                                     <label for="FilterPriceFrom" className="flex items-center gap-2 mr-3">
                                         <div className="w-full mr-1 sm:text-sm">Desde</div>
                                         <div className="relative">
-                                            <select id="FilterPrioceFrom" onChange={props.manejarFiltroPrecioMinimo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
+                                            <select id="FilterPriceFrom" onChange={props.manejarPrecioMinimo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
                                                 {precio.map(muestraPrecios)}
                                             </select>
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
@@ -72,10 +72,10 @@ const PrecioForm = (props) => {
                                         <span className="text-sm text-gray-800">€</span>
                                     </label>
 
-                                    <label for="FilterPriceTo" className="flex items-center gap-2">
+                                    <label htmlFor="FilterPriceTo" className="flex items-center gap-2">
                                         <div className="w-full mr-1 sm:text-sm">Hasta</div>
                                         <div className="relative">
-                                            <select id="FilterPriceTo" onChange={props.manejarFiltroPrecioMaximo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
+                                            <select id="FilterPriceTo" onChange={props.manejarPrecioMaximo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
                                                 {precio.map(muestraPrecios)}
                                             </select>
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
