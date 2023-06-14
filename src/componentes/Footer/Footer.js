@@ -1,4 +1,4 @@
-import imagen from "../../img/logo.png";
+import imagen from "../../img/LOGOINMO2.png";
 const Footer = () => {
   return (
     <footer aria-label="Site Footer" className="bg-[#354F52]">

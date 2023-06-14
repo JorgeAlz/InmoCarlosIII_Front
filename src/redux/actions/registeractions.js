@@ -2,7 +2,7 @@ export const REGISTER_REQUEST = 'REGISTER_REQUEST';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'REGISTER_FAILURE';
 
-export const register = (nombre, apellidos, usuario, clave) => {
+export const register = (nombre, apellidos, usuario, clave, email, telefono) => {
   return (dispatch) => {
     dispatch(registerRequest());
 
@@ -12,7 +12,7 @@ export const register = (nombre, apellidos, usuario, clave) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nombre, apellidos, usuario, clave })
+      body: JSON.stringify({ nombre, apellidos, usuario, clave , email, telefono})
     })
     .then(response => {
       if (!response.ok) {

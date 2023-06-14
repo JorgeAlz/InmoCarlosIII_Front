@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import logo from "../../img/logo.png";
+import logo from "../../img/LOGOINMO2.png";
 
 function Menu() {
 
@@ -14,9 +14,9 @@ function Menu() {
                         <a className="block text-teal-600" href="/">
                             <span className="sr-only">Home</span>
                             <img
-                                className="h-8"
+                                className="h-14"
                                 src={logo}
-                                alt="DescripciÃ³n de la imagen"
+                                alt="Logo inmobiliaria"
                             />
                         </a>
                     </div>

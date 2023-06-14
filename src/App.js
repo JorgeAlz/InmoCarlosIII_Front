@@ -4,8 +4,8 @@ import Viviendas from './paginas/Viviendas/Viviendas';
 import ViviendaDetallada from './paginas/ViviendaDetallada/ViviendaDetallada';
 import LoginForm2 from './paginas/Login/Login';
 import Logout from './paginas/Login/Logout';
-import Register from './paginas/Login/Register';
 import Register2 from './paginas/Login/Register2';
+import Modelo3D from './componentes/Modelo3D/Modelo3D';
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
         <Route component={token1 ? Home : LoginForm2 } path="/login"></Route>
         <Route component={Logout} path="/logout"></Route>
         <Route component={Register2} path="/register"></Route>
+        <Route component={Modelo3D} path='/modelos_3d'></Route>
       </div>
     </div>
   );
