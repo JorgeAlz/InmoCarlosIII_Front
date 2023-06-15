@@ -49,13 +49,13 @@ const Vivienda = (props) => {
                         </div>
                     </div>
                     <span className="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm mt-4">
-                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-r hover:bg-gray-50 focus:relative">
                             <div className="flex items-center">
                                 <FiPhone className="mr-2" />
                                 <p>Contactar</p>
                             </div>
                         </button>
-                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-l hover:bg-gray-50 focus:relative">
                             <div className="flex items-center">
                                 <FiHeart className="mr-2" />
                                 <p>Favoritos</p>

@@ -23,7 +23,7 @@ const ListaViviendas = (props) => {
     if (props.precioMin === "Indiferente" && props.precioMax === "Indiferente") {
       return true;
     } else if (props.precioMin === "Indiferente" && props.precioMax !== "Indiferente") {
-      return vivienda.precio <= props.precioMax;
+      return parseInt(vivienda.precio) <= props.precioMax;
     } else if (props.precioMin !== "Indiferente" && props.precioMax === "Indiferente") {
       return vivienda.precio >= props.precioMin;
     } else if (props.precioMin !== "Indiferente" && props.precioMax !== "Indiferente") {

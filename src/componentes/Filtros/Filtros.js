@@ -3,7 +3,7 @@ import HabitacionForm from "../HabitacionForm/HabitacionForm";
 import MunicipioProvinciaForm from "../MunicipioProvincia/MunicipioProvinciaForm";
 import PrecioForm from "../Precio/PrecioForm";
 import SuperficieForm from "../SuperficieForm/SuperficieForm";
-import TipoViviendaForm from "../TipoViviendaForm/TipoViviendaForm";
+import TipoViviendaForm from "../TipoVivienda/TipoViviendaForm";
 
 const Filtros = (props) => {
 
@@ -33,8 +33,8 @@ const Filtros = (props) => {
         props.setTipoVivienda(event.target.value);
     }
 
-    function restablecerTipoVivienda(value) {
-        props.setTipoVivienda(value);
+    function restablecerTipoVivienda() {
+        props.setTipoVivienda("Todos");
     }
 
     function manejarPrecioMinimo(event) {

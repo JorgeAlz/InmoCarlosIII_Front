@@ -15,6 +15,9 @@ const PrecioForm = (props) => {
       });
 
     function restablecerPrecios() {
+        document.getElementById("FiltroPriceDesde").selectedIndex = 0
+        document.getElementById("FiltroPriceHasta").selectedIndex = 0
+        props.restablecerPrecios();
     }
 
     function muestraPrecios(precio, index) {
@@ -48,10 +51,10 @@ const PrecioForm = (props) => {
                         <div className="w-[450px] rounded border border-gray-200 bg-white">
                             <div className="border-b border-gray-200 p-4">
                                 <div className="flex justify-center gap-4">
-                                    <label for="FilterPriceFrom" className="flex items-center gap-2 mr-3">
+                                    <label for="SelectPriceDesde" className="flex items-center gap-2 mr-3">
                                         <div className="w-full mr-1 sm:text-sm">Desde</div>
                                         <div className="relative">
-                                            <select id="FilterPriceFrom" onChange={props.manejarPrecioMinimo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
+                                            <select id="SelectPriceDesde" onChange={props.manejarPrecioMinimo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
                                                 {precio.map(muestraPrecios)}
                                             </select>
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
@@ -72,10 +75,10 @@ const PrecioForm = (props) => {
                                         <span className="text-sm text-gray-800">€</span>
                                     </label>
 
-                                    <label htmlFor="FilterPriceTo" className="flex items-center gap-2">
+                                    <label htmlFor="SelectPriceHasta" className="flex items-center gap-2">
                                         <div className="w-full mr-1 sm:text-sm">Hasta</div>
                                         <div className="relative">
-                                            <select id="FilterPriceTo" onChange={props.manejarPrecioMaximo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
+                                            <select id="SelectPriceHasta" onChange={props.manejarPrecioMaximo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
                                                 {precio.map(muestraPrecios)}
                                             </select>
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
