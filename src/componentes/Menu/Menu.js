@@ -1,11 +1,17 @@
 import { Link } from "wouter";
 import logo from "../../img/LOGOINMO2.png";
-import { useState } from "react";
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+
 
 function Menu() {
-
-    const token1 = sessionStorage.getItem('token');
+    const token1 = Cookies.get('token');
     const username = localStorage.getItem('user');
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const handleMobileMenuToggle = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -35,13 +41,7 @@ function Menu() {
                                     <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/viviendas">Propiedades en venta</a>
                                 </li>
                                 <li>
-                                    <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/">Careers</a>
-                                </li>
-                                <li>
-                                    <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/">History</a>
-                                </li>
-                                <li>
-                                    <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/">Services</a>
+                                    <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/asesoramiento">Asesoramiento</a>
                                 </li>
                                 <li>
                                     <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/modelos_3d">Modelos 3D</a>
@@ -54,7 +54,6 @@ function Menu() {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
-
                             {token1 ?
                                 <Link to="/logout"><a href="/logout" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Logout </a></Link>
                                 :
@@ -74,6 +73,7 @@ function Menu() {
                             </div>
                         </div>
                         <div className="block md:hidden">
+
                             <button onClick={toggleMenu} className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +119,13 @@ function Menu() {
                 )}
             </div>
         </header>
-
     );
 }
 
 export default Menu;
+
+
+
+
+
+

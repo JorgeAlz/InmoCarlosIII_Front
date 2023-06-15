@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/actions/loginactions';
 import { Container, Form, Button } from 'react-bootstrap';
+import Cookies from 'js-cookie';
+
 
 const LoginForm2 = () => {
 
-  const token1 = sessionStorage.getItem('token');
+  const token1 = Cookies.get('token');
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -17,11 +21,13 @@ const LoginForm2 = () => {
 
   const evaluarLogin = () => {
     if (token1 == null) {
-      console.log("me quedo");
-      console.log(token1);
     } else {
       console.log("redireccion a home");
     }
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -29,11 +35,7 @@ const LoginForm2 = () => {
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">
         <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-lg text-center">
-            <h1 className="text-2xl font-bold sm:text-3xl">Get started today!</h1>
-            <p className="mt-4 text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
-              eaque error neque ipsa culpa autem, at itaque nostrum!
-            </p>
+            <h1 className="text-2xl font-bold sm:text-3xl">¡Te damos la bienvenida!</h1>
           </div>
           <Form onSubmit={handleSubmit} className="mx-auto mb-0 mt-8 max-w-md space-y-4">
             <Form.Group controlId="formEmail">
@@ -42,7 +44,7 @@ const LoginForm2 = () => {
                 <Form.Control
                   type="text"
                   className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                  placeholder="Enter user"
+                  placeholder="Usuario"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
@@ -57,14 +59,17 @@ const LoginForm2 = () => {
               <Form.Label htmlFor="password" className="sr-only">Password</Form.Label>
               <div className="relative">
                 <Form.Control
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                  placeholder="Enter password"
+                  placeholder="Contraseña"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span
+                  className="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer"
+                  onClick={handleTogglePassword}
+                >
+                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
@@ -73,17 +78,17 @@ const LoginForm2 = () => {
             </Form.Group>
             <div className="flex items-center justify-between">
               <p className="text-sm text-gray-500">
-                No account?
-                <a className="underline" href="/">Sign up</a>
+                ¿No tienes cuenta? 
+                <a className="underline" href="/register"> Registrate ya</a>
               </p>
-              <Button onClick={evaluarLogin} className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white" type="submit">
-                Sign in
+              <Button onClick={evaluarLogin} className="inline-block rounded-lg bg-green-500 px-5 py-3 text-sm font-medium text-white" type="submit">
+                Login
               </Button>
             </div>
           </Form>
         </div>
         <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
-          <img alt="Welcome" src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" className="absolute inset-0 h-full w-full object-cover" />
+          <img alt="Welcome" src="https://www.papelpintadoonline.com/73458-thickbox_default/papel-pintado-espiga-verde-oscura-GCO_10397_73_28.jpg" className="absolute inset-0 h-full w-full object-cover" />
         </div>
       </section>
     </Container>

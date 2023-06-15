@@ -6,10 +6,16 @@ import LoginForm2 from './paginas/Login/Login';
 import Logout from './paginas/Login/Logout';
 import Register2 from './paginas/Login/Register2';
 import Modelo3D from './componentes/Modelo3D/Modelo3D';
+import Cookies from 'js-cookie';
+import Asesoramiento from './paginas/Asesoramiento/Asesoramiento';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AboutUs from './paginas/AboutUs/AboutUs';
+import easter_egg from './componentes/SobreNosotros/easteregg';
 
 function App() {
 
-  const token1 = sessionStorage.getItem('token');
+  const token1 = Cookies.get('token');
 
   return (
     <div>
@@ -21,7 +27,11 @@ function App() {
         <Route component={Logout} path="/logout"></Route>
         <Route component={Register2} path="/register"></Route>
         <Route component={Modelo3D} path='/modelos_3d'></Route>
+        <Route component={Asesoramiento} path='/asesoramiento'></Route>
+        <Route component={AboutUs} path='/sobre_nosotros'></Route>
+        <Route component={easter_egg} path='/easter_egg'></Route>
       </div>
+      <ToastContainer />
     </div>
   );
 }

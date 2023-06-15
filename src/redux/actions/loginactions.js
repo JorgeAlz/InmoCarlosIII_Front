@@ -1,6 +1,10 @@
+import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
+
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+
 export const login = (usuario, clave) => {
   return (dispatch) => {
     dispatch(loginRequest());
@@ -16,15 +20,15 @@ export const login = (usuario, clave) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      console.log(response.payload);
       dispatch(loginSuccess(response.headers.get('authorization')));
       return response;
     })
     .then(() => {
-      
       localStorage.setItem('user', usuario);
-      alert('Inicio de sesión exitoso!');
-      window.location.reload();
+      toast.success('¡Inicio de sesión exitoso!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     })
   };
 };
@@ -36,7 +40,7 @@ export const loginRequest = () => {
 };
 
 export const loginSuccess = (token) => {
-  sessionStorage.setItem('token', token);
+  Cookies.set('token', token, { secure: true });
   return {
     type: 'LOGIN_SUCCESS',
     payload: token,
