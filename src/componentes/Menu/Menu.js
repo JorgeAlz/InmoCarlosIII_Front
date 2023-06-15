@@ -1,17 +1,25 @@
 import { Link } from "wouter";
 import logo from "../../img/LOGOINMO2.png";
+import { useState } from "react";
 
 function Menu() {
 
     const token1 = sessionStorage.getItem('token');
     const username = localStorage.getItem('user');
 
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    function toggleMenu() {
+        setMenuOpen(!isMenuOpen);
+    }
+
+
     return (
         <header aria-label="Site Header" className="bg-gradient-to-br from-[#5F8577] to-[#84A98C] sticky top-0 z-50">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
-                        <a className="block text-teal-600" href="/">
+                        <a className="block text-teal-600">
                             <span className="sr-only">Home</span>
                             <img
                                 className="h-14"
@@ -46,11 +54,11 @@ function Menu() {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
-                            
+
                             {token1 ?
-                                    <Link to="/logout"><a href="/logout" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Logout </a></Link>
-                                    : 
-                                    <Link to="/login"><a href="/login" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Login </a></Link> 
+                                <Link to="/logout"><a href="/logout" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Logout </a></Link>
+                                :
+                                <Link to="/login"><a href="/login" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Login </a></Link>
                             }
                             <div className="hidden sm:flex">
                                 {/* <a className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600" href="/">
@@ -58,15 +66,15 @@ function Menu() {
                                 </a> */}
 
                                 {token1 ?
-                                        <Link to="/dashboard"><a href="/dashboard" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Bienvenid@, {username} </a></Link>
-                                        : 
-                                        <Link to="/register"><a href="/register" className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600">Crear cuenta </a></Link> 
-                                }   
-                                
+                                    <Link to="/dashboard"><a href="/dashboard" className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow">Bienvenid@, {username} </a></Link>
+                                    :
+                                    <Link to="/register"><a href="/register" className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600">Crear cuenta </a></Link>
+                                }
+
                             </div>
                         </div>
                         <div className="block md:hidden">
-                            <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button onClick={toggleMenu} className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-5 w-5"
@@ -85,6 +93,30 @@ function Menu() {
                         </div>
                     </div>
                 </div>
+                {isMenuOpen && (
+                    <nav className="md:hidden bg-gray-100 p-4 text-sm absolute top-16 right-0 z-50">
+                        <ul className="flex flex-col gap-4">
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/viviendas">Propiedades en venta</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/">Careers</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/">History</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/">Services</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/modelos_3d">Modelos 3D</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/sobre_nosotros">Sobre nosotros</a>
+                            </li>
+                        </ul>
+                    </nav>
+                )}
             </div>
         </header>
 

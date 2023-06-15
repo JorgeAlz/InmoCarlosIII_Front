@@ -3,16 +3,17 @@ import TipoVivienda from "./TipoVivienda";
 
 const TipoViviendaForm = (props) => {
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         let filtroTipoVivienda = document.getElementById("FiltroTipoVivienda");
         let targetElement = event.target;
-      
+
         if (!filtroTipoVivienda.contains(targetElement)) {
-          if (filtroTipoVivienda.open) {
-            filtroTipoVivienda.open = false;
-          }
+            if (filtroTipoVivienda.open) {
+                filtroTipoVivienda.open = false;
+            }
         }
-      });
+    });
+
 
     function restablecerTipoVivienda() {
         document.getElementById("SelectTipoVivienda").selectedIndex = 0
@@ -25,10 +26,10 @@ const TipoViviendaForm = (props) => {
 
     return (
         <div className="relative mt-[10px] mx-5">
-                <details id="FiltroTipoVivienda" className="group [&_summary::-webkit-details-marker]:hidden">
-                    <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
+            <details id="FiltroTipoVivienda" className="group [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center gap-2 cursor-pointer border-b border-gray-400 pb-1 transition text-gray-900 hover:border-gray-600">
                         <span className="text-sm font-medium"> Tipo </span>
-                        <span className="transition group-open:-rotate-180">
+                        <span className="transition-all group-open:rotate-90 group-open:-ml-[59px] md:group-open:-rotate-180 md:group-open:m-auto">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -44,43 +45,43 @@ const TipoViviendaForm = (props) => {
                                 />
                             </svg>
                         </span>
-                    </summary>
+                </summary>
 
-                    <div className="z-50 group-open:absolute group-open:start-0 group-open:top-auto group-open:mt-4">
-                        <div className="w-[325px] rounded border border-gray-200 bg-white">
-                            <div className="border-b border-gray-200 p-4">
-                                <div className="flex justify-center gap-4">
-                                    <label htmlFor="SelectTipoVivienda" className="flex items-center gap-2 mr-3">
-                                        <div className="w-full mr-3 sm:text-sm">Tipo de vivienda</div>
-                                        <div className="relative">
-                                            <select id="SelectTipoVivienda" onChange={props.manejarTipoVivienda} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none">
-                                                {tipovivienda.map(muestraTiposVivienda)}
-                                            </select>
-                                            <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-                                                <svg
-                                                    className="w-5 h-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                >
-                                                    <path
-                                                        fillRule="evenodd"
-                                                        d="M5.293 7.707a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clipRule="evenodd"
-                                                    />
-                                                </svg>
-                                            </div>
+                <div className="z-50 group-open:left-[-220%] group-open:top-[-85%] group-open:absolute md:group-open:start-0 md:group-open:top-auto md:group-open:mt-4">
+                    <div className="w-[200px] rounded border border-gray-200 bg-white md:w-[325px]">
+                        <div className="border-b border-gray-200 p-4">
+                            <div className="flex justify-center gap-4">
+                                <label htmlFor="SelectTipoVivienda" className="flex items-center gap-2 mr-3">
+                                    <div className="w-full md:mr-3 mr-1 text-xs md:text-sm">Tipo de vivienda</div>
+                                    <div className="relative">
+                                        <select id="SelectTipoVivienda" onChange={props.manejarTipoVivienda} className="pl-8 md:pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none">
+                                            {tipovivienda.map(muestraTiposVivienda)}
+                                        </select>
+                                        <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
+                                            <svg
+                                                className="w-5 h-5 text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M5.293 7.707a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                    clipRule="evenodd"
+                                                />
+                                            </svg>
                                         </div>
-                                    </label>
-                                </div>
+                                    </div>
+                                </label>
                             </div>
-                            <header className="flex items-center justify-between p-4">
-                                <button type="button" onClick={restablecerTipoVivienda} className="text-sm text-gray-900 ml-4 underline underline-offset-4">Resetear filtro</button>
-                            </header>
                         </div>
+                        <header className="flex md:items-center md:justify-between p-2 mb-1 md:mb-0 md:p-4">
+                            <button type="button" onClick={restablecerTipoVivienda} className="text-xs ml-[28%] text-gray-900 md:ml-4 underline underline-offset-4 md:text-sm">Resetear filtro</button>
+                        </header>
                     </div>
-                </details>
-            </div>
+                </div>
+            </details>
+        </div>
     )
 }
 

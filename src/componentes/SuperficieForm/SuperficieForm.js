@@ -27,7 +27,7 @@ const SuperficieForm = (props) => {
             <details id="FiltroSuperficie" className="group [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
                     <span className="text-sm font-medium"> Superficie </span>
-                    <span className="transition group-open:-rotate-180">
+                    <span className="transition-all group-open:rotate-90 group-open:-ml-[94px] md:group-open:-rotate-180 md:group-open:m-auto">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -45,12 +45,12 @@ const SuperficieForm = (props) => {
                     </span>
                 </summary>
 
-                <div className="z-50 group-open:absolute group-open:start-0 group-open:top-auto group-open:mt-4">
-                    <div className="w-[350px] rounded border border-gray-200 bg-white">
+                <div className="z-50 group-open:left-[-220%] group-open:top-[-50%] group-open:absolute md:group-open:start-0 md:group-open:top-auto md:group-open:mt-4">
+                    <div className="w-[200px] rounded border border-gray-200 bg-white md:w-[350px]">
                         <div className="border-b border-gray-200 p-4">
                             <div className="flex justify-center gap-4">
                                 <label for="FilterPriceFrom" className="flex items-center gap-2 mr-3">
-                                    <div className="w-full mr-4 sm:text-sm">Área mayor que</div>
+                                    <div className="w-full md:mr-4 text-xs text-center md:text-sm">Área mayor que</div>
                                     <div className="relative">
                                         <input
                                             type="number"
@@ -60,15 +60,15 @@ const SuperficieForm = (props) => {
                                             step="10"
                                             onInput={limitarCifra}
                                             onChange={props.manejarSuperficie}
-                                            className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm sm:text-sm focus:outline-none"
+                                            className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none"
                                         />
                                     </div>
-                                    <span className="text-sm ml-2 text-gray-800">m<sup>2</sup></span>
+                                    <span className="text-xs md:text-sm md:ml-2 text-gray-800">m<sup>2</sup></span>
                                 </label>
                             </div>
                         </div>
-                        <header className="flex items-center justify-between p-4">
-                            <button type="button" onClick={restablecerSuperficie} className="text-sm text-gray-900 ml-4 underline underline-offset-4">Resetear filtro</button>
+                        <header className="flex md:items-center md:justify-between p-2 mb-1 md:mb-0 md:p-4">
+                            <button type="button" onClick={restablecerSuperficie} className="text-xs md:text-sm text-gray-900 ml-4 underline underline-offset-4">Resetear filtro</button>
                         </header>
                     </div>
                 </div>

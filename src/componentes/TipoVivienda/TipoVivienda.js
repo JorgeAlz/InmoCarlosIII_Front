@@ -2,11 +2,11 @@ const TipoVivienda = (props) => {
 
     if (props.index === 0) {
         return (
-            <option value={props.tipoVivienda} selected={true}>{props.tipoVivienda}</option>
+            <option value={props.tipoVivienda} selected={true} className="text-xs md:text-sm">{props.tipoVivienda}</option>
         )
     } else {
         return (
-            <option value={props.tipoVivienda}>{props.tipoVivienda}</option>
+            <option value={props.tipoVivienda} className="text-xs md:text-sm">{props.tipoVivienda}</option>
         )
     }
 
