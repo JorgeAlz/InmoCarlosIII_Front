@@ -1,7 +1,6 @@
 import AjaxLoader from '../../componentes/Ajax-Loader/AjaxLoader';
 import { useState } from 'react';
 import ListaViviendas from '../../componentes/ListaViviendas/ListaViviendas';
-import CambioPagina from '../../componentes/CambioPagina/CambioPagina';
 import useAllViviendas from '../../hooks/useAllViviendas';
 import Menu from '../../componentes/Menu/Menu';
 import Footer from '../../componentes/Footer/Footer';
@@ -17,12 +16,7 @@ function Viviendas() {
     const [banyos, setBanyos] = useState("");
     const [superficie, setSuperficie] = useState("");
     const [tipoVivienda, setTipoVivienda] = useState("Todos");
-    const [page, setPage] = useState(1);
-    const { buscando, listaViviendas } = useAllViviendas(page);
-
-    function manejarPage(page) {
-        setPage(page);
-    }
+    const { buscando, listaViviendas } = useAllViviendas();
 
     return (
         <div>
@@ -49,7 +43,6 @@ function Viviendas() {
                     listaViviendas={listaViviendas}>
                 </ListaViviendas>
             }
-            <CambioPagina manejarPage={manejarPage} page={page}></CambioPagina>
             <Footer></Footer>
         </div>
     );

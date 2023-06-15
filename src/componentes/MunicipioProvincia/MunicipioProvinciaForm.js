@@ -20,6 +20,7 @@ const MunicipioProvinciaForm = (props) => {
     useEffect(() => {
         if (inputRef.current && props.rellenarInput) {
             props.rellenarInput(inputRef.current);
+            props.comprobarVacio(inputRef.current.value, svgRef.current);
         }
     }, [props.rellenarInput]);
 

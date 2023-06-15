@@ -4,9 +4,11 @@ const SuperficieForm = (props) => {
         let filtroSuperficie = document.getElementById("FiltroSuperficie");
         let targetElement = event.target;
 
-        if (!filtroSuperficie.contains(targetElement)) {
-            if (filtroSuperficie.open) {
-                filtroSuperficie.open = false;
+        if (filtroSuperficie) {
+            if (!filtroSuperficie.contains(targetElement)) {
+                if (filtroSuperficie.open) {
+                    filtroSuperficie.open = false;
+                }
             }
         }
     });
@@ -15,7 +17,7 @@ const SuperficieForm = (props) => {
         if (event.target.value > 1000) {
             event.target.value = 1000;
         }
-      }
+    }
 
     function restablecerSuperficie() {
         document.getElementById("Superficie").value = "";
@@ -49,7 +51,7 @@ const SuperficieForm = (props) => {
                     <div className="w-[200px] rounded border border-gray-200 bg-white md:w-[350px]">
                         <div className="border-b border-gray-200 p-4">
                             <div className="flex justify-center gap-4">
-                                <label for="FilterPriceFrom" className="flex items-center gap-2 mr-3">
+                                <label htmlFor="FilterPriceFrom" className="flex items-center gap-2 mr-3">
                                     <div className="w-full md:mr-4 text-xs text-center md:text-sm">Área mayor que</div>
                                     <div className="relative">
                                         <input
@@ -60,15 +62,15 @@ const SuperficieForm = (props) => {
                                             step="10"
                                             onInput={limitarCifra}
                                             onChange={props.manejarSuperficie}
-                                            className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none"
+                                            className="pl-8 pr-3 py-2 text-left appearance-none rounded-md bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none"
                                         />
                                     </div>
                                     <span className="text-xs md:text-sm md:ml-2 text-gray-800">m<sup>2</sup></span>
                                 </label>
                             </div>
                         </div>
-                        <header className="flex md:items-center md:justify-between p-2 mb-1 md:mb-0 md:p-4">
-                            <button type="button" onClick={restablecerSuperficie} className="text-xs md:text-sm text-gray-900 ml-4 underline underline-offset-4">Resetear filtro</button>
+                        <header className="flex items-center justify-center p-3 pt-2 md:p-4">
+                            <button type="button" onClick={restablecerSuperficie} className="text-xs md:text-sm text-gray-900 underline underline-offset-4">Resetear filtro</button>
                         </header>
                     </div>
                 </div>

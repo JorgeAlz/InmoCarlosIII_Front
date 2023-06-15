@@ -1,6 +1,17 @@
+import SinResultados from "../SinResultados/SinResultados";
 import Vivienda from "../Vivienda/Vivienda";
 
 const ListaViviendas = (props) => {
+
+  const viviendasFiltradas = props.listaViviendas
+    .filter(filtrarMunicipioProvincia)
+    .filter(filtrarPrecio)
+    .filter(filtrarHabitaciones)
+    .filter(filtrarBanyos)
+    .filter(filtrarSuperficie)
+    .filter(filtrarTipoVivienda);
+
+  const noHayViviendas = viviendasFiltradas.length === 0;
 
   function filtrarMunicipioProvincia(vivienda) {
     if (!(props.municipioProvincia === "" || props.municipioProvincia == null)) {
@@ -12,7 +23,8 @@ const ListaViviendas = (props) => {
 
   function filtradoPorLetras(vivienda) {
     for (let i = 0; i < props.municipioProvincia.length; i++) {
-      if (vivienda.municipio.charAt(i).toLowerCase() !== props.municipioProvincia.charAt(i).toLowerCase() && vivienda.provincia.charAt(i).toLowerCase() !== props.municipioProvincia.charAt(i).toLowerCase()) {
+      if (vivienda.municipio.substring(0, i + 1).toLowerCase() === props.municipioProvincia.substring(0, i + 1).toLowerCase() || vivienda.provincia.substring(0, i + 1).toLowerCase() === props.municipioProvincia.substring(0, i + 1).toLowerCase()) {
+      } else {
         return false;
       }
     }
@@ -23,7 +35,7 @@ const ListaViviendas = (props) => {
     if (props.precioMin === "Indiferente" && props.precioMax === "Indiferente") {
       return true;
     } else if (props.precioMin === "Indiferente" && props.precioMax !== "Indiferente") {
-      return parseInt(vivienda.precio) <= props.precioMax;
+      return vivienda.precio <= props.precioMax;
     } else if (props.precioMin !== "Indiferente" && props.precioMax === "Indiferente") {
       return vivienda.precio >= props.precioMin;
     } else if (props.precioMin !== "Indiferente" && props.precioMax !== "Indiferente") {
@@ -43,7 +55,7 @@ const ListaViviendas = (props) => {
 
   function filtrarSuperficie(vivienda) {
     return props.superficie === "" ? true
-      : vivienda.superficie >= parseInt(props.superficie);
+      : vivienda.superficie >= props.superficie;
   }
 
   function filtrarTipoVivienda(vivienda) {
@@ -59,16 +71,12 @@ const ListaViviendas = (props) => {
 
   return (
     <div>
-      <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10 mt-5">
-        {props.listaViviendas
-          .filter(filtrarMunicipioProvincia)
-          .filter(filtrarPrecio)
-          .filter(filtrarHabitaciones)
-          .filter(filtrarBanyos)
-          .filter(filtrarSuperficie)
-          .filter(filtrarTipoVivienda)
-          .map(muestraViviendas)}
+      {noHayViviendas ? (
+        <SinResultados></SinResultados>
+      ) : (<ul className="w-full grid sm:grid-cols-1 md:grid-cols-2 justify-center">
+        {viviendasFiltradas.map(muestraViviendas)}
       </ul>
+      )}
     </div>
   );
 }

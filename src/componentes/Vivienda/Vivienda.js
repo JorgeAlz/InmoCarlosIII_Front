@@ -2,15 +2,23 @@ import { TbRulerMeasure } from "react-icons/tb";
 import { FaShower } from "react-icons/fa";
 import { GiBed } from "react-icons/gi";
 import { MdOutlineAttachMoney } from "react-icons/md";
-import { FiHeart } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
 
 const Vivienda = (props) => {
 
+    let precioBonito = "";
+
+    for (let i = 0; i < props.vivienda.precio.toString().length; i++) {
+        precioBonito += props.vivienda.precio.toString().charAt(i);
+        if (i === props.vivienda.precio.toString().length - 4 || i === props.vivienda.precio.toString().length - 7) {
+            precioBonito += ".";
+        }
+    }
+
     return (
-        <li className="w-full p-5 sm:w-1/2">
+        <li className="p-5 md:w-5/6 mt-[25px] mb-[25px] ml-[70px] flex-wrap overflow-hidden">
             <a href={`/vivienda/${props.vivienda.id}`} className="block rounded-lg p-3 shadow-sm shadow-green-700 mt-4 transition-transform transform hover:scale-105">
-                <img alt={`Vivienda ${props.vivienda.id}`} src={props.vivienda.imagenes} className="h-40 w-full rounded-md object-cover"/>
+                <img alt={`Vivienda ${props.vivienda.id}`} src={props.vivienda.imagenes[0]} className="h-40 w-full rounded-md object-cover" />
                 <div className="mt-2">
                     <dl>
                         <div>
@@ -18,7 +26,7 @@ const Vivienda = (props) => {
                             <dd className="font-medium">{props.vivienda.direccion}, {props.vivienda.provincia}, {props.vivienda.municipio}</dd>
                         </div>
                     </dl>
-                    <div className="mt-6 flex items-center gap-8 text-xs">
+                    <div className="mt-4 flex items-center gap-8 text-xs">
                         <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
                             <TbRulerMeasure className="text-green-700 w-5 h-5"></TbRulerMeasure>
                             <div className="mt-1.5 sm:mt-0">
@@ -44,24 +52,18 @@ const Vivienda = (props) => {
                             <MdOutlineAttachMoney className="text-green-700 w-5 h-5"></MdOutlineAttachMoney>
                             <div className="mt-1.5 sm:mt-0">
                                 <p className="text-gray-500">Precio</p>
-                                <p className="font-medium">{props.vivienda.precio}€</p>
+                                <p className="font-medium">{precioBonito}€</p>
                             </div>
                         </div>
+                        <span className="absolute inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm right-3">
+                            <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-r hover:bg-gray-50 focus:relative">
+                                <div className="flex items-center">
+                                    <FiPhone className="mr-2" />
+                                    <p>Contactar</p>
+                                </div>
+                            </button>
+                        </span>
                     </div>
-                    <span className="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm mt-4">
-                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-r hover:bg-gray-50 focus:relative">
-                            <div className="flex items-center">
-                                <FiPhone className="mr-2" />
-                                <p>Contactar</p>
-                            </div>
-                        </button>
-                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-l hover:bg-gray-50 focus:relative">
-                            <div className="flex items-center">
-                                <FiHeart className="mr-2" />
-                                <p>Favoritos</p>
-                            </div>
-                        </button>
-                    </span>
                 </div>
             </a>
         </li>

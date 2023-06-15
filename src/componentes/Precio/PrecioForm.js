@@ -7,9 +7,11 @@ const PrecioForm = (props) => {
         let filtroPrecios = document.getElementById("FiltroPrecios");
         let targetElement = event.target;
 
-        if (!filtroPrecios.contains(targetElement)) {
-            if (filtroPrecios.open) {
-                filtroPrecios.open = false;
+        if (filtroPrecios) {
+            if (!filtroPrecios.contains(targetElement)) {
+                if (filtroPrecios.open) {
+                    filtroPrecios.open = false;
+                }
             }
         }
     });
@@ -51,7 +53,7 @@ const PrecioForm = (props) => {
                     <div className="w-[200px] rounded border border-gray-200 bg-white md:w-[450px]">
                         <div className="border-b border-gray-200 p-4">
                             <div className="flex flex-col gap-4">
-                                <label for="SelectPrecioDesde" className="flex items-center flex-grow gap-2 mr-3">
+                                <label htmlFor="SelectPrecioDesde" className="flex items-center flex-grow gap-2 mr-3">
                                     <div className="w-full mr-1 text-xs md:text-sm">Desde</div>
                                     <div className="relative">
                                         <select id="SelectPrecioDesde" onChange={props.manejarPrecioMinimo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none">
@@ -100,8 +102,8 @@ const PrecioForm = (props) => {
                                 </label>
                             </div>
                         </div>
-                        <header className="flex md:items-center md:justify-between p-2 mb-1 md:mb-0 md:p-4">
-                            <button type="button" onClick={restablecerPrecios} className="text-xs ml-[28%] md:text-sm text-gray-900 ml-4 underline underline-offset-4">Resetear filtro</button>
+                        <header className="flex items-center justify-center p-3 pt-2 md:p-4">
+                            <button type="button" onClick={restablecerPrecios} className="text-xs md:text-sm text-gray-900 underline underline-offset-4">Resetear filtro</button>
                         </header>
                     </div>
                 </div>

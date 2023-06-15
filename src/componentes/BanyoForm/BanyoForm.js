@@ -4,9 +4,11 @@ const BanyoForm = (props) => {
         let filtroBanyos = document.getElementById("FiltroBanyos");
         let targetElement = event.target;
 
-        if (!filtroBanyos.contains(targetElement)) {
-            if (filtroBanyos.open) {
-                filtroBanyos.open = false;
+        if (filtroBanyos) {
+            if (!filtroBanyos.contains(targetElement)) {
+                if (filtroBanyos.open) {
+                    filtroBanyos.open = false;
+                }
             }
         }
     });
@@ -15,7 +17,7 @@ const BanyoForm = (props) => {
         if (event.target.value > 9) {
             event.target.value = 9;
         }
-      }
+    }
 
     function restablecerBanyos() {
         document.getElementById("Banyos").value = "";
@@ -49,7 +51,7 @@ const BanyoForm = (props) => {
                     <div className="w-[200px] rounded border border-gray-200 bg-white md:w-[250px]">
                         <div className="border-b border-gray-200 p-4">
                             <div className="flex justify-center gap-4">
-                                <label for="FilterPriceFrom" className="flex items-center gap-2 mr-3">
+                                <label htmlFor="FilterPriceFrom" className="flex items-center gap-2 mr-3">
                                     <div className="w-full mr-3 text-xs md:text-sm">Cantidad</div>
                                     <div className="relative">
                                         <input
@@ -66,8 +68,8 @@ const BanyoForm = (props) => {
                                 </label>
                             </div>
                         </div>
-                        <header className="flex md:items-center md:justify-between p-2 mb-1 md:mb-0 md:p-4">
-                            <button type="button" onClick={restablecerBanyos} className="text-xs md:text-sm text-gray-900 ml-4 underline underline-offset-4">Resetear filtro</button>
+                        <header className="flex items-center justify-center p-3 pt-2 md:p-4">
+                            <button type="button" onClick={restablecerBanyos} className="text-xs md:text-sm text-gray-900 underline underline-offset-4">Resetear filtro</button>
                         </header>
                     </div>
                 </div>
