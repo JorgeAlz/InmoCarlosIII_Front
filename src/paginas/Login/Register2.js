@@ -15,16 +15,17 @@ const Register2 = () => {
 
   const dispatch = useDispatch();
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(register(username, telefono, firstname, surname, email, password));
+    dispatch(register(username, surname, firstname, password, email, telefono));
   };
 
   return (
     <section className="bg-white">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
           <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-            <img alt="Night" src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" className="absolute inset-0 h-full w-full object-cover opacity-80" />
+            <img alt="Night" src="https://p4.wallpaperbetter.com/wallpaper/648/709/216/leaves-green-branches-dark-background-wallpaper-preview.jpg" className="absolute inset-0 h-full w-full object-cover opacity-80" />
             <div className="hidden lg:relative lg:block lg:p-12">
               <a className="block text-white" href="/">
                 <span className="sr-only">Home</span>
@@ -56,7 +57,8 @@ const Register2 = () => {
                 </h1>
                 
               </div>
-              <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
+              <div>
+                <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
 
 
               <div controlId="formFirstName" className="col-span-6 sm:col-span-3">
@@ -65,14 +67,14 @@ const Register2 = () => {
                   </label>
                   <input type="text" id="FirstName" name="first_name"
                   value={firstname}
-                  onChange={(e) => setFirstName(e.target.value)} className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
+                  onChange={(e) => setFirstName(e.target.value)} className="mt-1 w-full rounded-md border-green-700 bg-white text-sm text-gray-700 shadow-sm" />
                 </div>
 
                 <div controlId="formTelefono" className="col-span-6 sm:col-span-3">
                   <label htmlFor="telefono" className="block text-sm font-medium text-gray-700">
                     Teléfono
                   </label>
-                  <input type="text" id="telefono" name="telefono" value={telefono}
+                  <input type="tel" id="telefono" name="telefono" value={telefono}
                   onChange={(e) => setTelefono(e.target.value)} className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
                 </div>
 
@@ -109,31 +111,21 @@ const Register2 = () => {
                   <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                     Contraseña
                   </label>
-                  <input type="text" id="Password" name="password"
+                  <input type="password" id="Password" name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
                 </div>
-                
-                <div className="col-span-6">
-                  <p className="text-sm text-gray-500">
-                    By creating an account, you agree to our
-                    <a href="#" className="text-gray-700 underline">
-                      terms and conditions
-                    </a>
-                    and
-                    <a href="#" className="text-gray-700 underline">privacy policy</a>.
-                  </p>
-                </div>
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                  <button type="submit" className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+                  <button type="submit" className="inline-block shrink-0 rounded-md border border-green-600 bg-green-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-green-600 focus:outline-none focus:ring active:text-blue-500">
                     Registro
                   </button>
                   <p className="mt-4 text-sm text-gray-500 sm:mt-0">
-                    Already have an account?
-                    <a href="/login" className="text-gray-700 underline">Log in</a>.
+                    ¿Ya tienes cuenta?
+                    <a href="/login" className="text-gray-700 underline"> Inicia sesión</a>.
                   </p>
                 </div>
-              </form>
+              </form> 
+              </div>
             </div>
           </main>
         </div>

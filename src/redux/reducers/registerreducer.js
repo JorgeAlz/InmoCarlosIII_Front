@@ -1,5 +1,5 @@
 
-import { REGISTER_REQUEST, REGISTER_FAILURE, REGISTER_SUCCESS } from '../actions/registeractions';
+import { REGISTER_REQUEST, REGISTER_FAILURE, REGISTER_SUCCESS, LOGIN_SUCCESS } from '../actions/registeractions';
   
 const initialState = {
   loading: false,
@@ -28,6 +28,13 @@ const registerReducer = (state = initialState, action) => {
       loading: false,
       error: action.payload,
     };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        token: action.payload,
+        error: null,
+      };
     default:
       return state;
   }

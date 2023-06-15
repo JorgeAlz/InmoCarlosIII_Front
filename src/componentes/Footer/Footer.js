@@ -13,8 +13,8 @@ const Footer = () => {
             </div>
 
             <p className="mt-6 max-w-md text-center leading-relaxed text-white sm:max-w-xs sm:text-left">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-              consequuntur amet culpa cum itaque neque.
+              Empresa líder en el sector de ventas y diseño de interiores.
+              No dudes en contactar con nosotros.
             </p>
 
             <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
@@ -85,7 +85,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="https://github.com/JorgeAlz/InmoCarlosIII_Front"
                   rel="noreferrer"
                   target="_blank"
                   className="text-teal-700 transition hover:text-teal-700/75"
@@ -133,137 +133,80 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-white">About Us</p>
+              <p className="text-lg font-medium text-white">Conócenos</p>
 
               <nav aria-label="Footer About Nav" className="mt-8">
                 <ul className="space-y-4 text-sm">
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/sobre_nosotros"
                     >
-                      Company History
+                      Sobre nosotros
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/about_us"
                     >
-                      Meet the Team
+                      Trabaja con nosotros
                     </a>
                   </li>
 
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Employee Handbook
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Careers
-                    </a>
-                  </li>
                 </ul>
               </nav>
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-white">Our Services</p>
+              <p className="text-lg font-medium text-white">Servicios</p>
 
               <nav aria-label="Footer Services Nav" className="mt-8">
                 <ul className="space-y-4 text-sm">
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/vivendas"
                     >
-                      Web Development
+                      Alquiler de propiedades
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/vivendas"
                     >
-                      Web Design
+                      Venta de propiedes
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/modelos_3d"
                     >
-                      Marketing
+                      Modelos 3D
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/asesoramiento"
                     >
-                      Google Ads
+                      Asesoramiento
                     </a>
                   </li>
                 </ul>
               </nav>
             </div>
 
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-white">Helpful Links</p>
-
-              <nav aria-label="Footer Helpful Nav" className="mt-8">
-                <ul className="space-y-4 text-sm">
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      FAQs
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Support
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="group flex justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                      href="/"
-                    >
-                      <span className="text-white transition group-hover:text-white/75">
-                        Live Chat
-                      </span>
-
-                      <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-white">Contact Us</p>
+              <p className="text-lg font-medium text-white">Contáctanos</p>
 
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
@@ -286,7 +229,7 @@ const Footer = () => {
                       />
                     </svg>
 
-                    <span className="flex-1 text-white">john@doe.com</span>
+                    <span className="flex-1 text-white">info@inmocarlosiii.com</span>
                   </a>
                 </li>
 
@@ -310,7 +253,7 @@ const Footer = () => {
                       />
                     </svg>
 
-                    <span className="flex-1 text-white">0123456789</span>
+                    <span className="flex-1 text-white">671487757</span>
                   </a>
                 </li>
 
@@ -336,7 +279,7 @@ const Footer = () => {
                   </svg>
 
                   <address className="-mt-0.5 flex-1 not-italic text-white">
-                    213 Lane, London, United Kingdom
+                  C. Carlos III, 3, 30201 Cartagena, Murcia
                   </address>
                 </li>
               </ul>
@@ -347,7 +290,7 @@ const Footer = () => {
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm text-white">
-              <span className="block sm:inline">All rights reserved.</span>
+              <span className="block sm:inline">All rights reserved. </span>
 
               <a
                 className="inline-block text-teal-600 underline transition hover:text-teal-600/75"

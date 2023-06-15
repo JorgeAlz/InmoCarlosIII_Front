@@ -1,11 +1,13 @@
+import { toast } from 'react-toastify';
+
 export const REGISTER_REQUEST = 'REGISTER_REQUEST';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'REGISTER_FAILURE';
 
+
 export const register = (nombre, apellidos, usuario, clave, email, telefono) => {
   return (dispatch) => {
     dispatch(registerRequest());
-
     fetch('http://localhost:8080/api/usuarios', {
       method: 'POST',
       mode: 'cors',
@@ -18,11 +20,15 @@ export const register = (nombre, apellidos, usuario, clave, email, telefono) => 
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+      dispatch(registerSuccess());
+      console.log(response.headers.get('authorization'));
       return response;
     })
     .then(() => {
-      dispatch(registerSuccess());
-      alert('¡Registro exitoso!');
+      toast.success('¡Registro exitoso!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     })
     .catch(error => {
       dispatch(registerFailure(error));
