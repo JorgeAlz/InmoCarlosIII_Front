@@ -13,7 +13,6 @@ export const login = (usuario, clave) => {
     fetch('http://localhost:8080/login', {
       method: 'POST',
       mode: 'cors',
-      credentials: 'include',
       body: JSON.stringify({ usuario, clave })
     })
     .then(response => {
@@ -30,6 +29,10 @@ export const login = (usuario, clave) => {
         window.location.reload();
       }, 3000);
     })
+    .catch(error => {
+      dispatch(loginFailure(error.message));
+      toast.error('Login incorrecto');
+    });
   };
 };
 

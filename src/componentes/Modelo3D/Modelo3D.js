@@ -3,8 +3,9 @@ import salon from "../../img/salon.jpg";
 import salon2 from "../../img/salon2.jpg";
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Footer from "../Footer/Footer";
+import Mapa from "../Mapa/MapaEjemplo";
 
 const Modelo3D = () => {
   const iframeStyle = {
@@ -64,7 +65,7 @@ const Modelo3D = () => {
           <div className="lg:col-span-3 lg:py-8">
             <ul className="grid grid-cols-2 gap-4">
               <li>
-                <a href="#" className="block group" onClick={handleOpenModal1}>
+                <a className="block group" onClick={handleOpenModal1}>
                   <img
                     src={salon}
                     alt=""
@@ -79,7 +80,7 @@ const Modelo3D = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="block group" onClick={handleOpenModal2}>
+                <a className="block group" onClick={handleOpenModal2}>
                   <img
                     src={salon2}
                     alt=""
@@ -137,6 +138,7 @@ const Modelo3D = () => {
           </Box>
         </Modal>
       </div>
+      <Footer></Footer>
     </section>
   );
 }
