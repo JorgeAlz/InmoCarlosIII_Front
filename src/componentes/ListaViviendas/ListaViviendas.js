@@ -23,7 +23,7 @@ const ListaViviendas = (props) => {
     if (props.precioMin === "Indiferente" && props.precioMax === "Indiferente") {
       return true;
     } else if (props.precioMin === "Indiferente" && props.precioMax !== "Indiferente") {
-      return vivienda.precio <= props.precioMax;
+      return parseInt(vivienda.precio) <= props.precioMax;
     } else if (props.precioMin !== "Indiferente" && props.precioMax === "Indiferente") {
       return vivienda.precio >= props.precioMin;
     } else if (props.precioMin !== "Indiferente" && props.precioMax !== "Indiferente") {
@@ -59,7 +59,7 @@ const ListaViviendas = (props) => {
 
   return (
     <div>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-24 mt-5">
+      <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10 mt-5">
         {props.listaViviendas
           .filter(filtrarMunicipioProvincia)
           .filter(filtrarPrecio)

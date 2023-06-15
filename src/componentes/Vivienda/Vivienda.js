@@ -8,7 +8,7 @@ import { FiPhone } from "react-icons/fi";
 const Vivienda = (props) => {
 
     return (
-        <li className="w-full sm:w-1/2">
+        <li className="w-full p-5 sm:w-1/2">
             <a href={`/vivienda/${props.vivienda.id}`} className="block rounded-lg p-3 shadow-sm shadow-green-700 mt-4 transition-transform transform hover:scale-105">
                 <img alt={`Vivienda ${props.vivienda.id}`} src={props.vivienda.imagenes} className="h-40 w-full rounded-md object-cover"/>
                 <div className="mt-2">
@@ -49,13 +49,13 @@ const Vivienda = (props) => {
                         </div>
                     </div>
                     <span className="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm mt-4">
-                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-r hover:bg-gray-50 focus:relative">
                             <div className="flex items-center">
                                 <FiPhone className="mr-2" />
                                 <p>Contactar</p>
                             </div>
                         </button>
-                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+                        <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-l hover:bg-gray-50 focus:relative">
                             <div className="flex items-center">
                                 <FiHeart className="mr-2" />
                                 <p>Favoritos</p>

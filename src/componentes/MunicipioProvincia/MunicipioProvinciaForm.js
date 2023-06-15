@@ -31,7 +31,7 @@ const MunicipioProvinciaForm = (props) => {
                 type="text"
                 onChange={masTexto}
                 placeholder="Buscar vivienda en provincia, municipio..."
-                className="mt-1 p-2 w-72 rounded-md border border-gray-200 shadow-sm focus:outline-none sm:text-sm"
+                className="mt-1 p-2 w-72 rounded-md border border-gray-200 shadow-sm focus:outline-none md:text-sm text-xs"
             />
             <svg
                 xmlns="http://www.w3.org/2000/svg"

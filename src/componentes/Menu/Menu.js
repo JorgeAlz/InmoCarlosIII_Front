@@ -3,6 +3,7 @@ import logo from "../../img/LOGOINMO2.png";
 import Cookies from 'js-cookie';
 import { useState } from 'react';
 
+
 function Menu() {
     const token1 = Cookies.get('token');
     const username = localStorage.getItem('user');
@@ -12,12 +13,19 @@ function Menu() {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    function toggleMenu() {
+        setMenuOpen(!isMenuOpen);
+    }
+
+
     return (
         <header aria-label="Site Header" className="bg-gradient-to-br from-[#5F8577] to-[#84A98C] sticky top-0 z-50">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
-                        <a className="block text-teal-600" href="/">
+                        <a className="block text-teal-600">
                             <span className="sr-only">Home</span>
                             <img
                                 className="h-14"
@@ -65,10 +73,8 @@ function Menu() {
                             </div>
                         </div>
                         <div className="block md:hidden">
-                            <button
-                                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-                                onClick={handleMobileMenuToggle}
-                            >
+
+                            <button onClick={toggleMenu} className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-5 w-5"
@@ -87,21 +93,26 @@ function Menu() {
                         </div>
                     </div>
                 </div>
-                {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <nav className="md:hidden">
-                        <ul className="flex flex-col items-center gap-4 mt-4 text-sm">
-                            <li>
-                                <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/viviendas">Propiedades en venta</a>
+                {isMenuOpen && (
+                    <nav className="md:hidden bg-gray-100 p-4 text-sm absolute top-16 right-0 z-50">
+                        <ul className="flex flex-col gap-4">
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/viviendas">Propiedades en venta</a>
                             </li>
-                            <li>
-                                <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/asesoramiento">Asesoramiento</a>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/">Careers</a>
                             </li>
-                            <li>
-                                <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/modelos_3d">Modelos 3D</a>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/">History</a>
                             </li>
-                            <li>
-                                <a className="relative text-white before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-green-200 before:transition hover:before:scale-x-100" href="/sobre_nosotros">Sobre nosotros</a>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/">Services</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/modelos_3d">Modelos 3D</a>
+                            </li>
+                            <li className="p-2 hover:bg-gray-300">
+                                <a href="/sobre_nosotros">Sobre nosotros</a>
                             </li>
                         </ul>
                     </nav>
