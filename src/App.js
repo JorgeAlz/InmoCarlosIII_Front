@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from './paginas/AboutUs/AboutUs';
 import easter_egg from './componentes/SobreNosotros/easteregg';
+import Contactar from './componentes/Contactar/Contactar';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route component={Home} path="/"></Route>
         <Route component={Viviendas} path="/viviendas"></Route>
         <Route component={ViviendaDetallada} path="/vivienda/:idVivienda"></Route>
+        <Route component={token1 ? Contactar : LoginForm2} path="/contactar/:idVivienda"></Route>
         <Route component={token1 ? Home : LoginForm2 } path="/login"></Route>
         <Route component={Logout} path="/logout"></Route>
         <Route component={Register2} path="/register"></Route>
