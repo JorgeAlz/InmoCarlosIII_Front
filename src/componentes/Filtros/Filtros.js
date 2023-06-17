@@ -83,7 +83,7 @@ const Filtros = (props) => {
 
     return (
         <div className="flex gap-8 p-6 bg-white border-b border-gray-300 sticky top-20 z-40">
-            <div className="flex md:ml-16">
+            <div className="flex md:ml-8">
                 <MunicipioProvinciaForm rellenarInput={rellenarInput}
                     manejarCambio={manejarCambio}
                     comprobarVacio={comprobarVacio}>

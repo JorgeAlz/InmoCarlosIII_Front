@@ -8,6 +8,7 @@ import { BiBuildingHouse } from "react-icons/bi";
 const Vivienda = (props) => {
 
     let precioBonito = "";
+    let margen = "";
 
     for (let i = 0; i < props.vivienda.precio.toString().length; i++) {
         precioBonito += props.vivienda.precio.toString().charAt(i);
@@ -16,8 +17,14 @@ const Vivienda = (props) => {
         }
     }
 
+    if (props.index % 2 === 0) {
+        margen = "ml-[75px]";
+    } else {
+        margen = "mr-[75px]";
+    }
+
     return (
-        <li className="p-5 md:w-5/6 mt-[25px] mb-[25px] ml-[75px] flex-wrap overflow-hidden">
+        <li className={`p-5 md:w-5/6 mt-[25px] mb-[25px] ${margen} flex-wrap overflow-hidden`}>
             <a href={`/vivienda/${props.vivienda.id}`} className="block rounded-lg p-3 shadow-sm shadow-green-700 mt-4 transition-transform transform hover:scale-105">
                 <img alt={`Vivienda ${props.vivienda.id}`} src={props.vivienda.imagenes[0]} className="h-40 w-full rounded-md object-cover" />
                 <div className="mt-2">
@@ -64,14 +71,14 @@ const Vivienda = (props) => {
                             </div>
                         </div>
                         <span className="absolute inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm right-3">
-                            <a href={`/contactar/${props.vivienda.id}`}>
+                            <button href={`/contactar/${props.vivienda.id}`}>
                                 <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 border-r hover:bg-gray-50 focus:relative">
                                     <div className="flex items-center">
                                         <FiPhone className="mr-2" />
                                         <p>Contactar</p>
                                     </div>
                                 </button>
-                            </a>
+                            </button>
                         </span>
                     </div>
                 </div>

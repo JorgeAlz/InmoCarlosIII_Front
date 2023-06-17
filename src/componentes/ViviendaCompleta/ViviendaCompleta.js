@@ -83,9 +83,9 @@ const ViviendaCompleta = (props) => {
                 </div>
             </div>
             <div className="mb-[3%] underline flex justify-center scale-150">
-                <a class="inline-block rounded-full border border-green-500 p-3 text-green-500 hover:bg-green-500 hover:text-white focus:outline-none active:border-green-400 active:bg-green-400 active:scale-95" href="/viviendas">
+                <a className="inline-block rounded-full border border-green-500 p-3 transition text-green-500 hover:bg-green-500 hover:text-white focus:outline-none active:border-green-400 active:bg-green-400 active:scale-95" href="/viviendas">
                     <svg
-                        class="h-5 w-5 rotate-180"
+                        className="h-5 w-5 rotate-180"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"

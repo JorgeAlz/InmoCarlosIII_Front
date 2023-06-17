@@ -5,6 +5,10 @@ import useAllViviendas from '../../hooks/useAllViviendas';
 import Menu from '../../componentes/Menu/Menu';
 import Footer from '../../componentes/Footer/Footer';
 import Filtros from '../../componentes/Filtros/Filtros';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import imagenLoader from '../../img/ajax-loader.gif';
+import FinalPagina from '../../componentes/FinalPagina/FinalPagina';
+import ScrollButton from '../../componentes/ScrollButton/ScrollButton';
 
 function Viviendas() {
 
@@ -16,7 +20,12 @@ function Viviendas() {
     const [banyos, setBanyos] = useState("");
     const [superficie, setSuperficie] = useState("");
     const [tipoVivienda, setTipoVivienda] = useState("Todos");
-    const { buscando, listaViviendas } = useAllViviendas();
+    const [page, setPage] = useState(0);
+    const { buscando, listaViviendas } = useAllViviendas(page);
+
+    function getNextPage() {
+        setPage(prevPage => prevPage + 1);
+    }
 
     return (
         <div>
@@ -31,8 +40,13 @@ function Viviendas() {
                 setSuperficie={setSuperficie}
                 setTipoVivienda={setTipoVivienda}>
             </Filtros>
-            {buscando ? <AjaxLoader></AjaxLoader>
-                : <ListaViviendas
+            <InfiniteScroll
+                dataLength={listaViviendas.length}
+                next={getNextPage}
+                hasMore={!buscando}
+                loader={<AjaxLoader loader={imagenLoader}></AjaxLoader>}
+                endMessage={<FinalPagina></FinalPagina>}>
+                <ListaViviendas
                     municipioProvincia={municipioProvincia}
                     precioMin={precioMin}
                     precioMax={precioMax}
@@ -42,7 +56,8 @@ function Viviendas() {
                     tipoVivienda={tipoVivienda}
                     listaViviendas={listaViviendas}>
                 </ListaViviendas>
-            }
+            </InfiniteScroll>
+            <ScrollButton></ScrollButton>
             <Footer></Footer>
         </div>
     );

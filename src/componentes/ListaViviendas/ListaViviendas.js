@@ -63,8 +63,8 @@ const ListaViviendas = (props) => {
       : vivienda.superficie >= parseInt(props.superficie);
   }
 
-  function muestraViviendas(vivienda) {
-    return <Vivienda key={vivienda.id} vivienda={vivienda}></Vivienda>;
+  function muestraViviendas(vivienda, index) {
+    return <Vivienda key={vivienda.id} vivienda={vivienda} index={index}></Vivienda>;
   }
 
 
@@ -73,7 +73,7 @@ const ListaViviendas = (props) => {
     <div>
       {noHayViviendas ? (
         <SinResultados></SinResultados>
-      ) : (<ul className="w-full grid sm:grid-cols-1 md:grid-cols-2 justify-center">
+      ) : (<ul className="w-full grid sm:grid-cols-1 md:grid-cols-2 justify-items-center">
         {viviendasFiltradas.map(muestraViviendas)}
       </ul>
       )}

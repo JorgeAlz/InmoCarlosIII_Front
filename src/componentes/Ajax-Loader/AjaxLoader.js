@@ -1,10 +1,8 @@
-import imagenLoader from '../../img/ajax-loader.gif';
-
-const AjaxLoader = () => {
+const AjaxLoader = (props) => {
 
     return (
         <div className="flex justify-center mt-20 mb-20">
-            <img src={imagenLoader} alt="ajax-loader"/>
+            <img src={props.loader} alt="ajax-loader"/>
         </div>
     )
 }
