@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
-const Mapa = () => {
+const MapaEjemplo = () => {
   return (
     <MapContainer
       center={[51.505, -0.09]}
@@ -17,4 +17,4 @@ const Mapa = () => {
   );
 };
 
-export default Mapa;
+export default MapaEjemplo;

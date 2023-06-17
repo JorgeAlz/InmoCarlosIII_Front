@@ -3,7 +3,7 @@ import imagenLoader from '../../img/ajax-loader.gif';
 const AjaxLoader = () => {
 
     return (
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center mt-20 mb-20">
             <img src={imagenLoader} alt="ajax-loader"/>
         </div>
     )

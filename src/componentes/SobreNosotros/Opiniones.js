@@ -13,7 +13,7 @@ function Opiniones() {
                 <div className="flex items-center gap-4">
                 <img
                     alt="Man"
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    src="https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_1280.jpg"
                     className="h-16 w-16 rounded-full object-cover"
                 />
                 <div>
@@ -54,9 +54,8 @@ function Opiniones() {
                     <p className="mt-1 text-lg font-medium text-gray-700">Jorge Alcaraz</p>
                 </div>
                 </div>
-                <p className="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                voluptatem alias ut provident sapiente repellendus.
+                <p className="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500 text-justify">
+                Quiero agradecer a esta inmobiliaria por su excelente trabajo. Me asesoraron de manera experta durante todo el proceso de venta de mi casa. Estuvieron siempre disponibles y me mantuvieron informado en cada etapa. Además, lograron vender mi propiedad a un precio justo y en un tiempo récord. ¡No dudaría en volver a trabajar con ellos!
                 </p>
             </blockquote>
             <blockquote className="rounded-lg bg-gray-100 p-8">
@@ -112,16 +111,15 @@ function Opiniones() {
                     <p className="mt-1 text-lg font-medium text-gray-700">Miguel Jesús</p>
                 </div>
                 </div>
-                <p className="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                voluptatem alias ut provident sapiente repellendus.
+                <p className="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500 text-justify">
+                Estoy muy satisfecho con los servicios de esta inmobiliaria. El equipo fue extremadamente profesional y atento a mis necesidades. Me ayudaron a encontrar la casa de mis sueños y se encargaron de todos los trámites sin problemas. ¡Recomendaría esta inmobiliaria a cualquiera que esté buscando comprar una propiedad!
                 </p>
             </blockquote>
             <blockquote className="rounded-lg bg-gray-100 p-8">
                 <div className="flex items-center gap-4">
                 <img
                     alt="Man"
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    src="https://cdn.pixabay.com/photo/2017/03/24/18/59/face-2171923_1280.jpg"
                     className="h-16 w-16 rounded-full object-cover"
                 />
                 <div>
@@ -170,9 +168,8 @@ function Opiniones() {
                     <p className="mt-1 text-lg font-medium text-gray-700">Juan Carlos</p>
                 </div>
                 </div>
-                <p className="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                voluptatem alias ut provident sapiente repellendus.
+                <p className="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500 text-justify">
+                Esta inmobiliaria hizo que la experiencia de encontrar un nuevo apartamento fuera mucho más fácil de lo que esperaba. Su personal fue amable y profesional, y comprendieron perfectamente mis preferencias y presupuesto. Me presentaron opciones que se adaptaban a mis necesidades y me guiaron en todo el proceso de alquiler. ¡Estoy muy contenta con mi nueva vivienda y recomendaría esta inmobiliaria sin dudarlo!
                 </p>
             </blockquote>
             </div>

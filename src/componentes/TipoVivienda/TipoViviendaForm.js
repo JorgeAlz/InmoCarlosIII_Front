@@ -27,7 +27,7 @@ const TipoViviendaForm = (props) => {
     }
 
     return (
-        <div className="relative mt-[10px] mx-5">
+        <div className="relative mt-[10px] mx-5 md:mr-8 md:ml-16">
             <details id="FiltroTipoVivienda" className="group [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex items-center gap-2 cursor-pointer border-b border-gray-400 pb-1 transition text-gray-900 hover:border-gray-600">
                     <span className="text-sm font-medium"> Tipo </span>

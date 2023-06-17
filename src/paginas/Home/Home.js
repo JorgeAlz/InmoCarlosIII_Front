@@ -34,12 +34,12 @@ function Home() {
             <Menu></Menu>
             <Banner></Banner>
             <div className="relative">
-                <div className="w-1/2 flex items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <input type="text" value={municipioProvincia} onChange={manejarMunicipio} onKeyDown={manejarEnter} className="w-full h-20 border border-gray-300 rounded-2xl py-2 px-4 text-lg focus:outline-none focus:border-green-700" placeholder="Buscar vivienda en provincia, municipio..."/>
-                    <a className="absolute right-0 bg-green-500 mr-7 text-white rounded-xl h-12 w-32 flex items-center justify-center cursor-pointer transition hover:scale-110" onClick={mandarMunicipio}>
-                        <FaSearch className="text-xl text-[#354F52] mr-3"></FaSearch>
-                        <p className="mr-2">Buscar</p>
-                    </a>
+                <div className="w-full px-8 md:px-0 md:w-1/2 flex items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <input type="text" value={municipioProvincia} onChange={manejarMunicipio} onKeyDown={manejarEnter} className="w-full h-16 md:h-20 border border-gray-300 rounded-2xl py-2 px-4 md:text-lg text-xs focus:outline-none focus:border-green-700" placeholder="Buscar vivienda en provincia, municipio..."/>
+                    <div className="absolute right-0 bg-green-500 mr-12 md:mr-6 text-white rounded-xl p-2 md:h-12 md:w-32 flex items-center justify-center cursor-pointer transition hover:scale-105" onClick={mandarMunicipio}>
+                        <FaSearch className="text-sm md:text-xl text-[#354F52] mr-1.5 md:mr-3"></FaSearch>
+                        <p className="text-sm md:text-lg mr-2">Buscar</p>
+                    </div>
                 </div>
             </div>
             <section className="mt-8">

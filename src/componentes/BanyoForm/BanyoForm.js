@@ -25,7 +25,7 @@ const BanyoForm = (props) => {
     }
 
     return (
-        <div className="relative mt-[10px] mx-5">
+        <div className="relative mt-[10px] mx-5 md:mx-8">
             <details id="FiltroBanyos" className="group [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
                     <span className="text-sm font-medium"> Baños </span>

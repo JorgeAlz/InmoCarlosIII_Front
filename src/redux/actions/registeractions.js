@@ -21,7 +21,7 @@ export const register = (nombre, apellidos, usuario, clave, email, telefono) => 
         throw new Error('Network response was not ok');
       }
       dispatch(registerSuccess());
-      console.log(response.headers.get('authorization'));
+      // console.log(response.headers.get('authorization'));
       return response;
     })
     .then(() => {

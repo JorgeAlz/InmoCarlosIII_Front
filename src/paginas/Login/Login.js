@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { login } from '../../redux/actions/loginactions';
 import { Container, Form, Button } from 'react-bootstrap';
 import Cookies from 'js-cookie';
+import logo from "../../img/LOGOINMO2.png"
 
 
 const LoginForm2 = () => {
@@ -22,7 +23,7 @@ const LoginForm2 = () => {
   const evaluarLogin = () => {
     if (token1 == null) {
     } else {
-      console.log("redireccion a home");
+      // console.log("redireccion a home");
     }
   };
 
@@ -34,16 +35,19 @@ const LoginForm2 = () => {
     <Container className="d-flex justify-content-center align-items-center mt-4">
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">
         <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-lg text-center">
-            <h1 className="text-2xl font-bold sm:text-3xl">¡Te damos la bienvenida!</h1>
+          <div className="flex flex-col items-center mx-auto max-w-lg text-center">
+            <a href="/" className="w-32">
+              <img src={logo} alt="Logo"></img>
+            </a>
+            <h1 className="text-2xl font-bold sm:text-3xl mt-8">¡Te damos la bienvenida!</h1>
           </div>
           <Form onSubmit={handleSubmit} className="mx-auto mb-0 mt-8 max-w-md space-y-4">
-            <Form.Group controlId="formEmail">
+            <Form.Group controlid="formEmail">
               <Form.Label htmlFor="email" className="sr-only">User</Form.Label>
               <div className="relative">
                 <Form.Control
                   type="text"
-                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border shadow-md focus:outline-none"
                   placeholder="Usuario"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -55,12 +59,12 @@ const LoginForm2 = () => {
                 </span>
               </div>
             </Form.Group>
-            <Form.Group controlId="formPassword">
+            <Form.Group controlid="formPassword">
               <Form.Label htmlFor="password" className="sr-only">Password</Form.Label>
               <div className="relative">
                 <Form.Control
                   type={showPassword ? "text" : "password"}
-                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border shadow-md focus:outline-none"
                   placeholder="Contraseña"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -69,7 +73,7 @@ const LoginForm2 = () => {
                   className="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer"
                   onClick={handleTogglePassword}
                 >
-                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
@@ -78,10 +82,10 @@ const LoginForm2 = () => {
             </Form.Group>
             <div className="flex items-center justify-between">
               <p className="text-sm text-gray-500">
-                ¿No tienes cuenta? 
-                <a className="underline" href="/register"> Registrate ya</a>
+                ¿No tienes cuenta?&nbsp;
+                <a className="underline" href="/register">Regístrate ya</a>
               </p>
-              <Button onClick={evaluarLogin} className="inline-block rounded-lg bg-green-500 px-5 py-3 text-sm font-medium text-white" type="submit">
+              <Button onClick={evaluarLogin} className="inline-block rounded-md bg-green-600 px-5 py-3 text-sm font-medium text-white transition active:bg-green-500 active:scale-95" type="submit">
                 Login
               </Button>
             </div>

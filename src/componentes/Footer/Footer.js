@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer aria-label="Site Footer" className="bg-[#354F52]">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="md:flex grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
             <div className="flex justify-center text-teal-600 sm:justify-start">
               <a className="block text-teal-600" href="/">
@@ -132,7 +132,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 md:ml-40">
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">Conócenos</p>
 
@@ -150,7 +150,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/about_us"
+                      href="/sobre_nosotros"
                     >
                       Trabaja con nosotros
                     </a>
@@ -168,7 +168,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/vivendas"
+                      href="/viviendas"
                     >
                       Alquiler de propiedades
                     </a>
@@ -177,7 +177,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/vivendas"
+                      href="/viviendas"
                     >
                       Venta de propiedes
                     </a>
@@ -204,40 +204,38 @@ const Footer = () => {
               </nav>
             </div>
 
-            
+
 
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">Contáctanos</p>
 
               <ul className="mt-8 space-y-4 text-sm">
-                <li>
+                <li className="flex justify-center md:justify-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 shrink-0 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
                   <a
                     className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                    href="/"
+                    href="mailto:info@inmocarlosiii.com"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-
-                    <span className="flex-1 text-white">info@inmocarlosiii.com</span>
+                    <span className="flex-1 text-white ml-1.5">info@inmocarlosiii.com</span>
                   </a>
                 </li>
 
-                <li>
-                  <a
+                <li className="flex justify-center md:justify-start">
+                  <div
                     className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                    href="/"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -254,11 +252,11 @@ const Footer = () => {
                       />
                     </svg>
 
-                    <span className="flex-1 text-white">671487757</span>
-                  </a>
+                    <span className="flex-1 text-white">671039624</span>
+                  </div>
                 </li>
 
-                <li className="flex items-start justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
+                <li className="flex justify-center md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 shrink-0 text-white"
@@ -279,8 +277,8 @@ const Footer = () => {
                     />
                   </svg>
 
-                  <address className="-mt-0.5 flex-1 not-italic text-white">
-                  C. Carlos III, 3, 30201 Cartagena, Murcia
+                  <address className="ml-1.5 not-italic text-white">
+                    C. Carlos III, 3, 30201 Cartagena, Murcia
                   </address>
                 </li>
               </ul>
@@ -291,23 +289,8 @@ const Footer = () => {
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm text-white">
-              <span className="block sm:inline">All rights reserved. </span>
+              <span className="block sm:inline">Todos los derechos reservados. </span>
 
-              <a
-                className="inline-block text-teal-600 underline transition hover:text-teal-600/75"
-                href="/"
-              >
-                Terms & Conditions
-              </a>
-
-              <span>&middot;</span>
-
-              <a
-                className="inline-block text-teal-600 underline transition hover:text-teal-600/75"
-                href="/"
-              >
-                Privacy Policy
-              </a>
             </p>
 
             <p className="mt-4 text-sm text-white sm:order-first sm:mt-0">

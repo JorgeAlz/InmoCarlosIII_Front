@@ -5,11 +5,11 @@ const ListaViviendas = (props) => {
 
   const viviendasFiltradas = props.listaViviendas
     .filter(filtrarMunicipioProvincia)
+    .filter(filtrarTipoVivienda)
     .filter(filtrarPrecio)
     .filter(filtrarHabitaciones)
     .filter(filtrarBanyos)
-    .filter(filtrarSuperficie)
-    .filter(filtrarTipoVivienda);
+    .filter(filtrarSuperficie);
 
   const noHayViviendas = viviendasFiltradas.length === 0;
 
@@ -31,6 +31,11 @@ const ListaViviendas = (props) => {
     return true;
   }
 
+  function filtrarTipoVivienda(vivienda) {
+    return props.tipoVivienda === "Todos" ? true
+      : vivienda.tipo === props.tipoVivienda;
+  }
+
   function filtrarPrecio(vivienda) {
     if (props.precioMin === "Indiferente" && props.precioMax === "Indiferente") {
       return true;
@@ -45,22 +50,17 @@ const ListaViviendas = (props) => {
 
   function filtrarHabitaciones(vivienda) {
     return props.habitaciones === "" ? true
-      : vivienda.habitaciones === props.habitaciones;
+      : vivienda.habitaciones === parseInt(props.habitaciones);
   }
 
   function filtrarBanyos(vivienda) {
     return props.banyos === "" ? true
-      : vivienda.banyos === props.banyos;
+      : vivienda.banyos === parseInt(props.banyos);
   }
 
   function filtrarSuperficie(vivienda) {
     return props.superficie === "" ? true
-      : vivienda.superficie >= props.superficie;
-  }
-
-  function filtrarTipoVivienda(vivienda) {
-    return props.tipoVivienda === "Todos" ? true
-      : vivienda.tipo === props.tipoVivienda;
+      : vivienda.superficie >= parseInt(props.superficie);
   }
 
   function muestraViviendas(vivienda) {

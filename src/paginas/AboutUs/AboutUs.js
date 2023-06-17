@@ -8,7 +8,7 @@ function AboutUs() {
         <div>
         <Menu></Menu>
         <div className="mt-8 mr-10 ml-10 mx-auto px-10 text-justify">
-                <p class="mb-3 text-gray-500 dark:text-gray-400">¡Bienvenido a InmoCarlosIII!</p>
+                <p class="font-bold text-lg mb-3 text-gray-500 dark:text-gray-400">¡Bienvenido a InmoCarlosIII!</p>
                 <p class="mb-3 text-gray-500 dark:text-gray-400">Nuestra historia comienza con tres amigos apasionados por el mundo de la arquitectura, el diseño de interiores y el negocio inmobiliario: Miguel, Juan Carlos y Jorge. Con una visión compartida y determinación inquebrantable, decidimos unir nuestros conocimientos y experiencias para crear algo único en el mercado.</p>
                 <p class="mb-3 text-gray-500 dark:text-gray-400">InmoCarlosIII nació de nuestro deseo de brindar un enfoque fresco y personalizado a la industria inmobiliaria. Nos propusimos marcar la diferencia al ofrecer a nuestros clientes más que solo propiedades en venta o alquiler. Queríamos convertirnos en un aliado confiable y un referente en diseño de interiores, transformando casas en verdaderos hogares.</p>
                 <p class="mb-3 text-gray-500 dark:text-gray-400">Desde nuestros primeros días, nos esforzamos por establecer relaciones sólidas y duraderas con nuestros clientes. Comprendemos que comprar o alquilar una propiedad es un paso importante en la vida de las personas, y nos comprometemos a acompañarlos en cada paso del camino. Nuestro enfoque personalizado nos permite entender las necesidades y deseos únicos de cada cliente, para así encontrar la opción perfecta que se adapte a su estilo de vida y presupuesto.</p>

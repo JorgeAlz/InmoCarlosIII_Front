@@ -11,6 +11,7 @@ import Asesoramiento from './paginas/Asesoramiento/Asesoramiento';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from './paginas/AboutUs/AboutUs';
+import Contactar from './componentes/Contactar/Contactar';
 import easter_egg from './componentes/SobreNosotros/easteregg';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route component={Modelo3D} path='/modelos_3d'></Route>
         <Route component={Asesoramiento} path='/asesoramiento'></Route>
         <Route component={AboutUs} path='/sobre_nosotros'></Route>
+        <Route component={token1 ? Contactar : LoginForm2} path="/contactar/:idVivienda"></Route>
         <Route component={easter_egg} path='/easter_egg'></Route>
       </div>
       <ToastContainer />
