@@ -13,25 +13,53 @@ import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from './paginas/AboutUs/AboutUs';
 import Contactar from './componentes/Contactar/Contactar';
 import easter_egg from './componentes/SobreNosotros/easteregg';
+import Usuarios from "./paginas/Usuario/Usuarios";
+import CrearUsuario from "./componentes/CrearUsuario/CrearUsuario";
+import ActualizarUsuario from "./componentes/ActualizarUsuario/ActualizarUsuario";
+import Propiedades from "./paginas/Propiedades/Propiedades";
+import CrearPropiedad from "./componentes/CrearPropiedad/CrearPropiedad";
+import ActualizarPropiedad from "./componentes/ActualizarPropiedad/ActualizarPropiedad";
 
 function App() {
-
-  const token1 = Cookies.get('token');
+  const token1 = Cookies.get("token");
 
   return (
     <div>
       <div>
         <Route component={Home} path="/"></Route>
         <Route component={Viviendas} path="/viviendas"></Route>
-        <Route component={ViviendaDetallada} path="/vivienda/:idVivienda"></Route>
-        <Route component={token1 ? Home : LoginForm2 } path="/login"></Route>
+        <Route
+          component={ViviendaDetallada}
+          path="/vivienda/:idVivienda"
+        ></Route>
+        <Route component={token1 ? Home : LoginForm2} path="/login"></Route>
         <Route component={Logout} path="/logout"></Route>
         <Route component={Register2} path="/register"></Route>
-        <Route component={Modelo3D} path='/modelos_3d'></Route>
-        <Route component={Asesoramiento} path='/asesoramiento'></Route>
-        <Route component={AboutUs} path='/sobre_nosotros'></Route>
-        <Route component={token1 ? Contactar : LoginForm2} path="/contactar/:idVivienda"></Route>
-        <Route component={easter_egg} path='/easter_egg'></Route>
+        <Route component={Modelo3D} path="/modelos_3d"></Route>
+        <Route component={Asesoramiento} path="/asesoramiento"></Route>
+        <Route component={AboutUs} path="/sobre_nosotros"></Route>
+        <Route
+          component={token1 ? Contactar : LoginForm2}
+          path="/contactar/:idVivienda"
+        ></Route>
+        <Route component={easter_egg} path="/easter_egg"></Route>
+
+        <Route path="/dashboard/usuarios" component={Usuarios}></Route>
+        <Route path="/dashboard/users/create" component={CrearUsuario}></Route>
+        <Route
+          path="/dashboard/users/update/:id"
+          component={ActualizarUsuario}
+        ></Route>
+
+        <Route path="/dashboard/propiedades" component={Propiedades}></Route>
+        <Route
+          path="/dashboard/propiedades/create"
+          component={CrearPropiedad}
+        ></Route>
+        <Route
+          path="/dashboard/propiedades/update/:id"
+          component={ActualizarPropiedad}
+        ></Route>
       </div>
       <ToastContainer />
     </div>
