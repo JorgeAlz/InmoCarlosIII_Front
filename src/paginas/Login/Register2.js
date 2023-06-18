@@ -13,6 +13,7 @@ const Register2 = () => {
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -28,7 +29,7 @@ const Register2 = () => {
 
   function soloNumeros(event) {
     const keyCode = event.which || event.keyCode;
-    const isValidKey = keyCode >= 35 && keyCode <= 40 || keyCode >= 48 && keyCode <= 57 || keyCode === 116 || keyCode === 8 || keyCode === 46 || keyCode === 45;
+    const isValidKey = keyCode >= 35 && keyCode <= 40 || keyCode >= 48 && keyCode <= 57 || keyCode === 116 || keyCode === 8 || keyCode === 9 || keyCode === 46 || keyCode === 45;
 
     if (!isValidKey) {
       event.preventDefault();
@@ -41,6 +42,10 @@ const Register2 = () => {
     }
     setTelefono(event.target.value)
   }
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <section className="bg-white">
@@ -130,13 +135,22 @@ const Register2 = () => {
                     onChange={(e) => setEmail(e.target.value)} className="p-2 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700" />
                 </div>
 
-                <div controlid="formPassword" className="col-span-6 sm:col-span-3">
+                <div controlid="formPassword" className="relative col-span-8 sm:col-span-4">
                   <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                     Contraseña
                   </label>
-                  <input type="password" id="Password" name="password"
+                  <input type={showPassword ? "text" : "password"} id="Password" name="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} className="p-2 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700" />
+                  <span
+                    className="absolute inset-y-0 end-0 grid place-content-center px-3"
+                    onClick={handleTogglePassword}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400 cursor-pointer mt-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </span>
                 </div>
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                   <button type="submit" className="inline-block shrink-0 rounded-md border border-green-600 bg-green-600 px-12 py-3 text-sm font-medium text-white transition active:bg-green-500 active:border-green-500 active:scale-95 focus:outline-none">

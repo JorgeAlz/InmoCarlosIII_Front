@@ -22,6 +22,7 @@ import ActualizarPropiedad from "./componentes/ActualizarPropiedad/ActualizarPro
 
 function App() {
   const token1 = Cookies.get("token");
+  const username = localStorage.getItem('user');
 
   return (
     <div>
@@ -43,8 +44,7 @@ function App() {
           path="/contactar/:idVivienda"
         ></Route>
         <Route component={easter_egg} path="/easter_egg"></Route>
-
-        <Route path="/dashboard/usuarios" component={Usuarios}></Route>
+        <Route component={token1 && username === "admin" ? Usuarios : Home} path='/dashboard/usuarios'></Route>
         <Route path="/dashboard/users/create" component={CrearUsuario}></Route>
         <Route
           path="/dashboard/users/update/:id"

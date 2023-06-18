@@ -34,7 +34,7 @@ function Contactar(props) {
 
       function soloNumeros(event) {
         const keyCode = event.which || event.keyCode;
-        const isValidKey = keyCode >= 35 && keyCode <= 40 || keyCode >= 48 && keyCode <= 57 || keyCode === 116 || keyCode === 8 || keyCode === 46 || keyCode === 45;
+        const isValidKey = keyCode >= 35 && keyCode <= 40 || keyCode >= 48 && keyCode <= 57 || keyCode === 116 || keyCode === 8 || keyCode === 9 || keyCode === 46 || keyCode === 45;
     
         if (!isValidKey) {
           event.preventDefault();
