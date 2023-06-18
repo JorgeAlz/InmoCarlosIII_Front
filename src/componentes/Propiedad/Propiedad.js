@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteUsuario } from "../../servicios/usuarios/deleteUsuario";
+// import { deleteUsuario } from "../../servicios/usuarios/deleteUsuario";
 import { Link } from "react-router-dom";
 
 const Propiedad = ({
@@ -11,15 +11,15 @@ const Propiedad = ({
   banyos,
   superficie,
 }) => {
-  // const handleDelete = () => {
-  //   deletePropiedad(id)
-  //     .then(() => {
-  //       console.log("Usuario eliminado");
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
+  //  const handleDelete = () => {
+  //    deletePropiedad(id)
+  //      .then(() => {
+  //        console.log("Usuario eliminado");
+  //      })
+  //      .catch((error) => {
+  //        console.error(error);
+  //      });
+  //  };
 
   return (
     <tr key={id} className="text-center">
@@ -37,7 +37,7 @@ const Propiedad = ({
 
       <td className="whitespace-nowrap px-4 py-2">
         <div className="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
-          <Link to={`/dashboard/propiedades/${id}`}>
+          <Link to={`/dashboard/propiedades/update/${id}`}>
             <button className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

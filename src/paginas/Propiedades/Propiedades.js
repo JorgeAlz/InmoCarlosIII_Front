@@ -9,7 +9,7 @@ import AjaxLoader from "../../componentes/Ajax-Loader/AjaxLoader";
 const Propiedades = () => {
   const [page, setPage] = useState(0);
   const { buscando, listaViviendas } = useAllViviendas(page);
-
+  console.log(listaViviendas);
   function getNextPage() {
     setPage(prevPage => prevPage + 1);
   }
