@@ -24,7 +24,7 @@ const ScrollButton = () => {
     return (
 
         <button id="scrollButton" onClick={topFunction} className="fixed bottom-10 right-9 z-50 opacity-0 text-white text-base transition bg-green-500 rounded-full p-4 focus:outline-none hover:bg-green-600 active:bg-green-400 active:scale-90">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="w-6 h-6">
                 <path d="M12 19V5M5 12l7-7 7 7" />
             </svg>
         </button>

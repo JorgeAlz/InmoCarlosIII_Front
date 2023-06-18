@@ -15,33 +15,33 @@
         fill: #2f3e46;
         fill-opacity: 1;
         stroke: none;
-        stroke-width: 0.0925062;
+        strokeWidth: 0.0925062;
       }
       .path234-4 {
         fill: #354f52;
         fill-opacity: 1;
         stroke: none;
-        stroke-width: 0.0687729;
+        strokeWidth: 0.0687729;
       }
       .path234-4-9 {
         fill: #52796f;
         fill-opacity: 1;
         stroke: none;
-        stroke-width: 0.0470026;
+        strokeWidth: 0.0470026;
       }
       .path234-4-9-8 {
         fill: #84a98c;
         fill-opacity: 1;
         stroke: none;
-        stroke-width: 0.0324241;
+        strokeWidth: 0.0324241;
       }
       .rect342-3-9-9-9 {
         fill: #ffffff;
         fill-opacity: 0.733333;
         stroke: #354f52;
-        stroke-width: 1.90581;
-        stroke-linecap: square;
-        stroke-linejoin: round;
+        strokeWidth: 1.90581;
+        strokeLinecap: square;
+        strokeLinejoin: round;
       }
       .text1564 {
         font-size: 29.3333px;
@@ -49,9 +49,9 @@
         -inkscape-font-specification: Calibri;
         white-space: pre;
         fill: #354f52;
-        stroke-width: 1.13386;
-        stroke-linecap: square;
-        stroke-linejoin: round;
+        strokeWidth: 1.13386;
+        strokeLinecap: square;
+        strokeLinejoin: round;
       }
     </style>
     <rect x="163.89047" y="411.67728" width="281.60547" height="41.622978" id="rect1566" />
@@ -63,29 +63,29 @@
        transform="translate(14.798378,0.8603708)">
       <path
          id="path234"
-         style="fill:#2f3e46;fill-opacity:1;stroke:none;stroke-width:0.0925062"
+         style="fill:#2f3e46;fill-opacity:1;stroke:none;strokeWidth:0.0925062"
          d="M 84.065821,52.677932 A 44.820274,44.820794 0 0 0 48.649151,68.193826 44.820274,44.820794 0 0 0 38.243857,103.79366 H 126.95154 A 44.820274,44.820794 0 0 0 111.52793,63.252946 44.820274,44.820794 0 0 0 84.065821,52.677932 Z" />
       <path
          id="path234-4"
-         style="fill:#354f52;fill-opacity:1;stroke:none;stroke-width:0.0687729"
+         style="fill:#354f52;fill-opacity:1;stroke:none;strokeWidth:0.0687729"
          d="M 83.693889,62.05093 A 33.321238,33.321625 0 0 0 57.36387,73.586219 33.321238,33.321625 0 0 0 50.340374,103.68204 H 114.85317 A 33.321238,33.321625 0 0 0 104.11065,69.913117 33.321238,33.321625 0 0 0 83.693889,62.05093 Z" />
       <path
          id="path234-4-9"
-         style="fill:#52796f;fill-opacity:1;stroke:none;stroke-width:0.0470026"
+         style="fill:#52796f;fill-opacity:1;stroke:none;strokeWidth:0.0470026"
          d="M 83.348268,71.97182 A 22.773295,22.773559 0 0 0 65.353099,79.855578 22.773295,22.773559 0 0 0 61.61474,103.58216 h 41.96232 A 22.773295,22.773559 0 0 0 97.302033,77.345209 22.773295,22.773559 0 0 0 83.348268,71.97182 Z" />
       <path
          id="path234-4-9-8"
-         style="fill:#84a98c;fill-opacity:1;stroke:none;stroke-width:0.0324241"
+         style="fill:#84a98c;fill-opacity:1;stroke:none;strokeWidth:0.0324241"
          d="M 83.114813,81.875171 A 15.709854,15.710037 0 0 0 70.701085,87.313677 15.709854,15.710037 0 0 0 68.122228,103.68114 H 97.069379 A 15.709854,15.710037 0 0 0 92.740634,85.581932 15.709854,15.710037 0 0 0 83.114813,81.875171 Z" />
       <path
          id="rect342-3-9-9-9"
-         style="fill:#ffffff;fill-opacity:0.733333;stroke:#354f52;stroke-width:1.90581;stroke-linecap:square;stroke-linejoin:round"
+         style="fill:#ffffff;fill-opacity:0.733333;stroke:#354f52;strokeWidth:1.90581;strokeLinecap:square;strokeLinejoin:round"
          d="m 34.892849,104.34435 h 95.440531 v 19.79988 H 34.892849 Z" />
       <g
          aria-label="INMOCARLOS III"
          transform="matrix(0.32208454,0,0,0.32208454,-7.1989446,-23.477119)"
          id="text1564"
-         style="font-size:29.3333px;font-family:Calibri;-inkscape-font-specification:Calibri;white-space:pre;shape-inside:url(#rect1566);fill:#354f52;stroke-width:1.13386;stroke-linecap:square;stroke-linejoin:round">
+         style="font-size:29.3333px;font-family:Calibri;-inkscape-font-specification:Calibri;white-space:pre;shape-inside:url(#rect1566);fill:#354f52;strokeWidth:1.13386;strokeLinecap:square;strokeLinejoin:round">
         <path
            d="m 166.6263,438.09983 v -20.99737 h 2.77864 v 20.99737 z"
            style="font-family:Arial;-inkscape-font-specification:Arial"
@@ -140,28 +140,28 @@
            id="path4921" />
       </g>
       <path
-         style="fill:#e1e6dc;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#e1e6dc;fill-opacity:1;stroke:none;strokeWidth:0.3;strokeLinecap:square;strokeLinejoin:round;stroke-dasharray:none;stroke-opacity:1"
          d="m 37.866075,99.621395 31.365959,0.07127 18.232033,-22.001188 18.670073,21.552288 3.8394,4.162045 -4.96864,-0.0323 -17.34725,-20.089622 -17.175153,20.100422 -32.285412,0.0215 c 0,0 -0.435055,-3.40238 -0.33101,-3.799637 z"
          id="path3448" />
       <path
          id="path3448-8"
-         style="fill:#e1e6dc;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#e1e6dc;fill-opacity:1;stroke:none;strokeWidth:0.3;strokeLinecap:square;strokeLinejoin:round;stroke-dasharray:none;stroke-opacity:1"
          d="m 99.675875,77.675469 -5.303035,6.399092 2.422591,2.791044 3.073714,-3.597712 17.347295,20.089737 4.96869,0.032 -3.83905,-4.162028 z" />
       <path
          id="rect4708"
-         style="fill:#e1e6dc;stroke-width:0.375127;stroke-linecap:square;stroke-linejoin:round"
+         style="fill:#e1e6dc;strokeWidth:0.375127;strokeLinecap:square;strokeLinejoin:round"
          d="m 81.648506,98.311867 h 5 v 5.000003 h -5 z" />
       <path
          id="rect4708-5"
-         style="fill:#e1e6dc;stroke-width:0.375127;stroke-linecap:square;stroke-linejoin:round"
+         style="fill:#e1e6dc;strokeWidth:0.375127;strokeLinecap:square;strokeLinejoin:round"
          d="m 87.886505,98.335457 h 5 v 5.000003 h -5 z" />
       <path
          id="rect4708-0"
-         style="fill:#e1e6dc;stroke-width:0.375127;stroke-linecap:square;stroke-linejoin:round"
+         style="fill:#e1e6dc;strokeWidth:0.375127;strokeLinecap:square;strokeLinejoin:round"
          d="m 81.648842,92.058334 h 5 v 5 h -5 z" />
       <path
          id="rect4708-8"
-         style="fill:#e1e6dc;stroke-width:0.375127;stroke-linecap:square;stroke-linejoin:round"
+         style="fill:#e1e6dc;strokeWidth:0.375127;strokeLinecap:square;strokeLinejoin:round"
          d="m 87.886528,92.058334 h 5 v 5 h -5 z" />
     </g>
   </g>

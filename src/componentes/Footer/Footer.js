@@ -13,7 +13,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <p className="mt-6 max-w-md text-center leading-relaxed text-white sm:max-w-xs sm:text-left">
+            <p className="mt-6 md:max-w-md text-center leading-relaxed text-white sm:max-w-xs">
               Empresa líder en el sector de ventas y diseño de interiores.
               No dudes en contactar con nosotros.
             </p>
