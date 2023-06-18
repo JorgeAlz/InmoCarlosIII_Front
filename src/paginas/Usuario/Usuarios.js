@@ -1,5 +1,5 @@
-import Navbar from "../componentes/NavBar";
-import ListaUsuarios from "../componentes/ListaUsuarios";
+import Navbar from "../../componentes/NavBar/NavBar";
+import ListaUsuarios from "../../componentes/ListaUsuarios/ListaUsuarios";
 import useAllUsers from "../../hooks/useAllUsers";
 
 const Usuarios = () => {

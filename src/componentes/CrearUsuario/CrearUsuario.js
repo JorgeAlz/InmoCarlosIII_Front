@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { createUser } from "../../servicios/usuarios/createUser";
 
 const CrearUsuario = () => {
   const usuarioInicial = {
@@ -16,7 +16,6 @@ const CrearUsuario = () => {
   };
 
   const [usuario, setUsuario] = useState(usuarioInicial);
-  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,20 +42,11 @@ const CrearUsuario = () => {
         esAdmin: admin,
       };
 
-      axios
-        .post("http://localhost:8080/api/usuarios", usuarioEnviado)
-        .then(function (response) {
-          console.log(response);
-          navigate("/dashboard/usuarios"); // Redireccionar a la ruta dashboard
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      Swal.fire(
-        "Usuario Creado",
-        "El usuario ha sido creado con exito!",
-        "success"
-      );
+      createUser(usuarioEnviado);
+
+      Swal.fire("Usuario Creado",
+      "¡El usuario ha sido creado con éxito!",
+      "success");
 
       setUsuario(usuarioInicial);
     }

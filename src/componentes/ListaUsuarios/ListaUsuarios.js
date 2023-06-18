@@ -8,7 +8,7 @@ const ListaUsuarios = ({ listaUsuarios }) => {
         <h1 className="mb-10 mt-10 text-center font-mono text-4xl font-semibold text-teal-600">
           Lista de Usuarios
         </h1>
-        <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm">
+        <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm mb-5">
           <Link
             to="/dashboard/users/create"
             className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"

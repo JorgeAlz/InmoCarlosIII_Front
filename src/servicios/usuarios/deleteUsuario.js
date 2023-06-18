@@ -1,10 +1,11 @@
 export function deleteUsuario(itemId) {
+
   return fetch(`http://localhost:8080/api/usuarios/${itemId}`, {
     method: "DELETE",
     mode: "cors",
     headers: {
-      Authorization:
-        "$2a$10$l6zOUMqniHIs8DNprvqoQeYEWb2arcecUhknlCrX3.WOSf0FnwmNW",
+      // Authorization:
+      //   "$2a$10$l6zOUMqniHIs8DNprvqoQeYEWb2arcecUhknlCrX3.WOSf0FnwmNW",
       "Content-Type": "application/json",
     },
   })

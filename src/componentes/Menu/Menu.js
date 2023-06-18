@@ -57,17 +57,29 @@ function Menu() {
                                 <Link to="/login"><a href="/login" className="mx-5 md:mx-0 rounded-md bg-green-500 px-2.5 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-medium text-white shadow transition hover:scale-[103%]">Login </a></Link>
                             }
                             {/* <div className="hidden sm:flex"> */}
-                                {/* <a className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600" href="/">
+                            {/* <a className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600" href="/">
                                     Crear cuenta
                                 </a> */}
 
-                                {token1 ?
-                                    <Link to="/dashboard"><a href="/dashboard" className="mr-1 md:mr-0 rounded-md bg-white px-2.5 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-medium text-green-500 shadow transition hover:scale-[103%]">Bienvenid@, {username} </a></Link>
-                                    :
-                                    <Link to="/register"><a href="/register" className="mr-1 md:mr-0 rounded-md bg-gray-100 px-2.5 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-medium text-green-500 shadow transition hover:scale-[103%]">Crear cuenta </a></Link>
-                                }
+                            {token1 ? (
+                                username === 'admin' ? (
+                                    <Link to="/dashboard">
+                                        <a href="/dashboard" className="rounded-md bg-white px-5 py-2.5 text-sm font-medium text-green-500 shadow">
+                                            Bienvenido, {username}
+                                        </a>
+                                    </Link>
+                                ) : (
+                                    <p className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600">Bienvenido, {username}</p>
+                                )
+                            ) : (
+                                <Link to="/register">
+                                    <a href="/register" className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-green-500">
+                                        Crear cuenta
+                                    </a>
+                                </Link>
+                            )}
 
-                                {/* {username === "admin" ?
+                            {/* {username === "admin" ?
                                     console.log("Tienes acceso a dashboard")
                                     :
                                     console.log("No tienes acceso a dashboard")

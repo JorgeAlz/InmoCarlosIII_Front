@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 const CrearPropiedad = () => {
   const propiedadInicial = {
@@ -40,22 +39,22 @@ const CrearPropiedad = () => {
         "question"
       );
     } else {
-      axios
-        .post("http://localhost:8080/api/propiedades", propiedad)
-        .then(function (response) {
-          console.log(response);
-          navigate("/dashboard/propiedades"); // Redireccionar a la ruta dashboard
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      Swal.fire(
-        "Propiedad Creada",
-        "La propiedad ha sido creada con éxito!",
-        "success"
-      );
+      // axios
+      //   .post("http://localhost:8080/api/propiedades", propiedad)
+      //   .then(function (response) {
+      //     console.log(response);
+      //     navigate("/dashboard/propiedades"); // Redireccionar a la ruta dashboard
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
+      // Swal.fire(
+      //   "Propiedad Creada",
+      //   "La propiedad ha sido creada con éxito!",
+      //   "success"
+      // );
 
-      setPropiedad(propiedadInicial);
+      // setPropiedad(propiedadInicial);
     }
   };
 

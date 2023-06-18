@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useIdUser from "../../hooks/useIdUser";
-import { updateUser } from "../../servicios/updateUser";
+import { updateUser } from "../../servicios/usuarios/updateUser";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const ActualizarUsuario = (props) => {
   const usuarioInicial = {
@@ -19,9 +20,28 @@ const ActualizarUsuario = (props) => {
 
   const [nuevoUsuario, setNuevoUsuario] = useState(usuarioInicial);
 
-  nuevoUsuario.id = antiguoUsuario.id;
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (antiguoUsuario) {
+      setNuevoUsuario(antiguoUsuario);
+    }
+  }, [antiguoUsuario]);
+
+  function soloNumeros(event) {
+    const keyCode = event.which || event.keyCode;
+    const isValidKey = keyCode >= 35 && keyCode <= 40 || keyCode >= 48 && keyCode <= 57 || keyCode === 116 || keyCode === 8 || keyCode === 46 || keyCode === 45;
+
+    if (!isValidKey) {
+      event.preventDefault();
+    }
+
+    if (event.target.value.length > 8) {
+      event.target.value = event.target.value.slice(0, 8);
+    }
+  }
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,7 +50,6 @@ const ActualizarUsuario = (props) => {
       !nuevoUsuario.nombre ||
       !nuevoUsuario.apellidos ||
       !nuevoUsuario.usuario ||
-      !nuevoUsuario.clave ||
       !nuevoUsuario.email ||
       !nuevoUsuario.telefono
     ) {
@@ -144,23 +163,6 @@ const ActualizarUsuario = (props) => {
             </div>
           </div>
           <div>
-            <label htmlFor="clave" className="sr-only">
-              Clave
-            </label>
-            <div className="relative">
-              <input
-                type="password"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Contraseña"
-                id="clave"
-                name="clave"
-                autoComplete="current-password"
-                value={nuevoUsuario.clave}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          <div>
             <label htmlFor="email" className="sr-only">
               Email
             </label>
@@ -186,12 +188,13 @@ const ActualizarUsuario = (props) => {
               <input
                 type="text"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Telefono"
+                placeholder={nuevoUsuario.telefono}
                 id="telefono"
                 name="telefono"
                 autoComplete="tel"
                 value={nuevoUsuario.telefono}
                 onChange={handleChange}
+                onKeyDown={soloNumeros}
               />
             </div>
           </div>

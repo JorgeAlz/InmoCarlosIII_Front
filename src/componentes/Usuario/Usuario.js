@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteUsuario } from "../../servicios/deleteUsuario";
+import { deleteUsuario } from "../../servicios/usuarios/deleteUsuario";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 

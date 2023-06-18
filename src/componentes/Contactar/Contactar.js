@@ -26,6 +26,21 @@ function Contactar(props) {
         }
     }
 
+    function handleChange(event) {
+        if (event.target.value.length > 9) {
+          event.target.value = event.target.value.slice(0, 9);
+        }
+      }
+
+      function soloNumeros(event) {
+        const keyCode = event.which || event.keyCode;
+        const isValidKey = keyCode >= 35 && keyCode <= 40 || keyCode >= 48 && keyCode <= 57 || keyCode === 116 || keyCode === 8 || keyCode === 46 || keyCode === 45;
+    
+        if (!isValidKey) {
+          event.preventDefault();
+        }
+      }
+
     return (
         <div>
             <Menu></Menu>
@@ -49,11 +64,11 @@ function Contactar(props) {
                                     <label className="sr-only" htmlFor="nombre">
                                         Nombre
                                     </label>
-                                    <div controlId="formNombre" className="col-span-8 sm:col-span-4">
+                                    <div controlid="formNombre" className="col-span-8 sm:col-span-4">
                                         <label htmlFor="nombre" className="block text-sm font-medium text-gray-700">
                                             Nombre
                                         </label>
-                                        <input type="text" id="nombre" name="nombre" className="p-3 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm" />
+                                        <input type="text" id="nombre" name="nombre" className="p-3 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700" />
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -61,22 +76,22 @@ function Contactar(props) {
                                         <label className="sr-only" htmlFor="email">
                                             Correo electrónico
                                         </label>
-                                        <div controlId="formEmail" className="col-span-8 sm:col-span-4">
+                                        <div controlid="formEmail" className="col-span-8 sm:col-span-4">
                                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                                                 Correo electrónico
                                             </label>
-                                            <input type="text" id="email" name="email" className="p-3 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm" />
+                                            <input type="email" id="email" name="email" className="p-3 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700" />
                                         </div>
                                     </div>
                                     <div>
                                         <label className="sr-only" htmlFor="telefono">
                                             Teléfono
                                         </label>
-                                        <div controlId="formTelefono" className="col-span-8 sm:col-span-4">
+                                        <div controlid="formTelefono" className="col-span-8 sm:col-span-4">
                                             <label htmlFor="telefono" className="block text-sm font-medium text-gray-700">
                                                 Teléfono
                                             </label>
-                                            <input type="number" id="telefono" name="telefono" className="p-3 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm" />
+                                            <input type="text" id="telefono" name="telefono" onChange={handleChange} onKeyDown={soloNumeros} className="p-3 mt-1 w-full rounded-md border-green-700 bg-gray-200 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700" />
                                         </div>
                                     </div>
                                 </div>

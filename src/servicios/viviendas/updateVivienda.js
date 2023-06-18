@@ -1,6 +1,6 @@
-export function updatePropiedad(id, newData) {
+export function updateVivienda(id, newData) {
   console.log(newData);
-  return fetch(`http://localhost:8080/api/usuarios/${id}`, {
+  return fetch(`http://localhost:8080/api/propiedades/${id}`, {
     method: "PUT",
     mode: "cors",
     headers: {
@@ -18,11 +18,11 @@ export function updatePropiedad(id, newData) {
       return response;
     })
     .then(() => {
-      console.log("Usuario actualizado");
-      // Realiza cualquier acción adicional después de actualizar el usuario
+      console.log("Propiedad actualizada");
+      // Realiza cualquier acción adicional después de actualizar la propiedad
     })
     .catch((error) => {
-      console.error("Error al actualizar el usuario:", error);
+      console.error("Error al actualizar la propiedad:", error);
       // Maneja el error de acuerdo a tus necesidades
     });
 }

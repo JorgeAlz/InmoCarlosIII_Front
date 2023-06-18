@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useIdUser from "../../hooks/useIdUser";
-import { updatePropiedad } from "../../servicios/updatePropiedad";
+import { updateVivienda } from "../../servicios/viviendas/updateVivienda";
 import Swal from "sweetalert2";
 
 const ActualizarPropiedad = (props) => {
@@ -46,7 +46,7 @@ const ActualizarPropiedad = (props) => {
         "question"
       );
     } else {
-      updatePropiedad(nuevaPropiedad.id, nuevaPropiedad);
+      updateVivienda(nuevaPropiedad.id, nuevaPropiedad);
       setTimeout(() => {
         navigate("/dashboard/propiedades/");
         window.location.reload();

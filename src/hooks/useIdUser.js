@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getIdUser } from "./../servicios/getIdUser";
+import { getIdUser } from "./../servicios/usuarios/getIdUser";
 
 const useAllUsers = (id) => {
   const [buscando, setBuscando] = useState(true);
