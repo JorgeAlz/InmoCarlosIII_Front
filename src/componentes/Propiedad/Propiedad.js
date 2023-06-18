@@ -1,6 +1,8 @@
 import React from "react";
 // import { deleteUsuario } from "../../servicios/usuarios/deleteUsuario";
 import { Link } from "react-router-dom";
+import { deleteProperty } from "../../servicios/viviendas/deleteProperty";
+import Swal from "sweetalert2";
 
 const Propiedad = ({
   id,
@@ -11,15 +13,23 @@ const Propiedad = ({
   banyos,
   superficie,
 }) => {
-  //  const handleDelete = () => {
-  //    deletePropiedad(id)
-  //      .then(() => {
-  //        console.log("Usuario eliminado");
-  //      })
-  //      .catch((error) => {
-  //        console.error(error);
-  //      });
-  //  };
+  const handleDelete = () => {
+    deleteProperty(id)
+      .then(() => {
+        console.log("Usuario eliminado");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    Swal.fire(
+      "Propiedad Eliminada",
+      "La propiedad ha sido eliminada con exito",
+      "success"
+    );
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  };
 
   return (
     <tr key={id} className="text-center">
@@ -52,7 +62,10 @@ const Propiedad = ({
               Editar
             </button>
           </Link>
-          <button className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm text-red-500 shadow-sm focus:relative">
+          <button
+            className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm text-red-500 shadow-sm focus:relative"
+            onClick={handleDelete}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
