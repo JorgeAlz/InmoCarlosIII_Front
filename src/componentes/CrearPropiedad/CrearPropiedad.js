@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { createProperty } from "../../servicios/viviendas/createProperty";
 
 const CrearPropiedad = () => {
   const propiedadInicial = {
@@ -13,12 +14,12 @@ const CrearPropiedad = () => {
     banyos: "",
     superficie: "",
     estado: "",
+    municipio: "",
     imagenes: [],
     descripcion: "",
   };
 
   const [propiedad, setPropiedad] = useState(propiedadInicial);
-  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +32,8 @@ const CrearPropiedad = () => {
       !propiedad.habitaciones ||
       !propiedad.banyos ||
       !propiedad.superficie ||
-      !propiedad.estado
+      !propiedad.estado ||
+      !propiedad.municipio
     ) {
       Swal.fire(
         "Error de validación",
@@ -39,31 +41,38 @@ const CrearPropiedad = () => {
         "question"
       );
     } else {
-      // axios
-      //   .post("http://localhost:8080/api/propiedades", propiedad)
-      //   .then(function (response) {
-      //     console.log(response);
-      //     navigate("/dashboard/propiedades"); // Redireccionar a la ruta dashboard
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
-      // Swal.fire(
-      //   "Propiedad Creada",
-      //   "La propiedad ha sido creada con éxito!",
-      //   "success"
-      // );
+      createProperty(propiedad);
 
-      // setPropiedad(propiedadInicial);
+      Swal.fire(
+        "Propiedad Creada",
+        "¡La propiedad ha sido creada con éxito!",
+        "success"
+      );
+
+      setPropiedad(propiedadInicial);
     }
   };
-
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setPropiedad((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    const { name, value, type } = event.target;
+
+    if (type === "file") {
+      // Manejo de archivos seleccionados
+      const selectedFiles = Array.from(event.target.files);
+      const fileNames = selectedFiles.map((file) => file.name);
+      console.log(fileNames);
+
+      setPropiedad((prevState) => ({
+        ...prevState,
+        imagenes: fileNames,
+      }));
+    } else {
+      // Manejo de otros campos de entrada
+      setPropiedad((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+      console.log(propiedad);
+    }
   };
 
   return (
@@ -220,6 +229,23 @@ const CrearPropiedad = () => {
               />
             </div>
           </div>
+          <div>
+            <label htmlFor="municipio" className="sr-only">
+              Municipio
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder="Municipio"
+                id="municipio"
+                name="municipio"
+                autoComplete="on"
+                value={propiedad.municipio}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
 
           <div>
             <label htmlFor="descripcion" className="sr-only">
@@ -232,6 +258,22 @@ const CrearPropiedad = () => {
                 id="descripcion"
                 name="descripcion"
                 value={propiedad.descripcion}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="imagenes" className="sr-only">
+              Imágenes
+            </label>
+            <div className="relative">
+              <input
+                type="file"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                id="imagenes"
+                name="imagenes"
+                accept="image/*"
+                multiple
                 onChange={handleChange}
               />
             </div>
