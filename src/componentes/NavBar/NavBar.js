@@ -56,7 +56,7 @@ const NavBar = () => {
                     />
                   </svg>
                   <span className="absolute cursor-default start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
-                    Properties
+                    Propiedades
                   </span>
                 </Link>
               </li>

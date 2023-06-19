@@ -106,7 +106,7 @@ const Filtros = (props) => {
                         restablecerSuperficie={restablecerSuperficie}>
                     </SuperficieForm>
                 </div>
-                <div className="block mt-[7px] md:hidden">
+                <div className="block mt-[7px] md:hidden ml-7">
                     <button onClick={toggleFilter} className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

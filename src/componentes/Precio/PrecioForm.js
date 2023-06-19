@@ -52,9 +52,9 @@ const PrecioForm = (props) => {
                 <div className="z-50 group-open:left-[-220%] group-open:top-[-50%] group-open:absolute md:group-open:start-0 md:group-open:top-auto md:group-open:mt-4">
                     <div className="w-[200px] rounded border border-gray-200 bg-white md:w-[450px]">
                         <div className="border-b border-gray-200 p-4">
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col md:flex-row gap-4">
                                 <label htmlFor="SelectPrecioDesde" className="flex items-center flex-grow gap-2 mr-3">
-                                    <div className="w-full mr-1 text-xs md:text-sm">Desde</div>
+                                    <div className="w-full mr-1 md:ml-4 text-xs md:text-sm">Desde</div>
                                     <div className="relative">
                                         <select id="SelectPrecioDesde" onChange={props.manejarPrecioMinimo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none">
                                             {precio.map(muestraPrecios)}
@@ -78,7 +78,7 @@ const PrecioForm = (props) => {
                                 </label>
 
                                 <label htmlFor="SelectPrecioHasta" className="flex items-center flex-grow gap-2">
-                                    <div className="w-full mr-1 text-xs md:text-sm">Hasta</div>
+                                    <div className="w-full mr-1 md:ml-4 text-xs md:text-sm">Hasta</div>
                                     <div className="relative">
                                         <select id="SelectPrecioHasta" onChange={props.manejarPrecioMaximo} className="pl-8 pr-3 py-2 text-left rounded-md appearance-none bg-white border border-gray-200 shadow-sm text-xs md:text-sm focus:outline-none">
                                             {precio.map(muestraPrecios)}

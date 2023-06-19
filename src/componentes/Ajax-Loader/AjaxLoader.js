@@ -1,8 +1,13 @@
+import loader from "../../img/ajax-loader.gif";
+
 const AjaxLoader = (props) => {
+
+    let realLoader = "";
+    props.loader === undefined ? realLoader = loader : realLoader = props.loader;
 
     return (
         <div className="flex justify-center mt-20 mb-20">
-            <img src={props.loader} alt="ajax-loader"/>
+            <img src={realLoader} alt="ajax-loader"/>
         </div>
     )
 }

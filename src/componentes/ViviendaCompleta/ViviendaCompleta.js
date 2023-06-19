@@ -38,7 +38,7 @@ const ViviendaCompleta = (props) => {
                     <div className="flex flex-col p-6">
                         <div className="flex">
                             <p className="text-2xl font-bold pb-5 pt-3">{precioBonito}€</p>
-                            <span className="h-12 w-32 inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm ml-6 mt-1.5">
+                            <span className="h-12 w-30 inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm ml-6 mt-1.5">
                                 <button className="inline-block px-4 md:px-5 text-sm font-medium text-gray-700 border-r hover:bg-gray-50 focus:relative">
                                     <a href={`/contactar/${props.vivienda.id}`} className="flex items-center">
                                         <FiPhone className="mr-2 md:text-lg" />

@@ -64,16 +64,16 @@ function Menu() {
                             {token1 ? (
                                 username === 'admin' ? (
                                     <Link to="/dashboard/usuarios">
-                                        <a href="/dashboard/usuarios" className="rounded-md bg-white px-5 py-2.5 text-sm font-medium text-green-500 shadow">
+                                        <a href="/dashboard/usuarios" className="rounded-md bg-white px-2.5 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-medium text-green-500 shadow">
                                             Bienvenid@, {username}
                                         </a>
                                     </Link>
                                 ) : (
-                                    <p className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600">Bienvenid@, {username}</p>
+                                    <p className="rounded-md bg-gray-100 px-2.5 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-medium text-teal-600">Bienvenid@, {username}</p>
                                 )
                             ) : (
                                 <Link to="/register">
-                                    <a href="/register" className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-green-500">
+                                    <a href="/register" className="rounded-md bg-gray-100 px-2.5 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-medium text-green-500">
                                         Crear cuenta
                                     </a>
                                 </Link>
